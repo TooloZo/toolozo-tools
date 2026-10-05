@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Length Converter Online – দৈর্ঘ্যের একক রূপান্তর করুন | TooloZo Tools</title>
+
+  <meta name="description" content="Length Converter দিয়ে মিটার, কিলোমিটার, সেন্টিমিটার, মিলিমিটার, ফুট, ইঞ্চি, গজ ও মাইলের মধ্যে দ্রুত দৈর্ঘ্য রূপান্তর করুন। বিনামূল্যে অনলাইন Length Converter।">
+
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://toolozo.github.io/toolozo-tools/tools/length-converter.html">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 22px 15px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 5px;
+      font-size: 28px;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    nav {
+      background: white;
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav a {
+      color: #111827;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 760px;
+      margin: 25px auto;
+      padding: 0 15px;
+    }
+
+    .tool-box,
+    .info {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+    }
+
+    .tool-box h2,
+    .info h2 {
+      margin-top: 0;
+      font-size: 22px;
+    }
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      font-weight: bold;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 7px;
+      font-size: 16px;
+      background: white;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 5px;
+    }
+
+    button {
+      border: none;
+      padding: 11px 18px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .convert {
+      background: #111827;
+      color: white;
+    }
+
+    .clear {
+      background: #e5e7eb;
+      color: #111827;
+    }
+
+    .result {
+      margin-top: 22px;
+      padding: 18px;
+      background: #f3f4f6;
+      border-radius: 8px;
+      display: none;
+      word-break: break-word;
+    }
+
+    .result strong {
+      font-size: 20px;
+    }
+
+    .info {
+      margin-top: 22px;
+    }
+
+    .info h3 {
+      font-size: 18px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 30px;
+      background: #111827;
+      color: white;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 23px;
+      }
+
+      .row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .tool-box,
+      .info {
+        padding: 17px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 4px 6px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Length Converter</h1>
+    <p>দৈর্ঘ্যের বিভিন্ন একক সহজে রূপান্তর করুন</p>
+  </header>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../index.html#tools">Tools</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#privacy">Privacy</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+
+  <main>
+
+    <section class="tool-box">
+      <h2>Length Converter</h2>
+
+      <div class="field">
+        <label for="value">মান লিখুন</label>
+        <input type="number" id="value" placeholder="যেমন: 10" step="any">
+      </div>
+
+      <div class="row">
+
+        <div class="field">
+          <label for="fromUnit">যে একক থেকে</label>
+          <select id="fromUnit">
+            <option value="meter">মিটার (m)</option>
+            <option value="kilometer">কিলোমিটার (km)</option>
+            <option value="centimeter">সেন্টিমিটার (cm)</option>
+            <option value="millimeter">মিলিমিটার (mm)</option>
+            <option value="foot">ফুট (ft)</option>
+            <option value="inch">ইঞ্চি (in)</option>
+            <option value="yard">গজ (yd)</option>
+            <option value="mile">মাইল (mi)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="toUnit">যে এককে</label>
+          <select id="toUnit">
+            <option value="kilometer">কিলোমিটার (km)</option>
+            <option value="meter">মিটার (m)</option>
+            <option value="centimeter">সেন্টিমিটার (cm)</option>
+            <option value="millimeter">মিলিমিটার (mm)</option>
+            <option value="foot">ফুট (ft)</option>
+            <option value="inch">ইঞ্চি (in)</option>
+            <option value="yard">গজ (yd)</option>
+            <option value="mile">মাইল (mi)</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="buttons">
+        <button class="convert" onclick="convertLength()">রূপান্তর করুন</button>
+        <button class="clear" onclick="clearConverter()">Clear</button>
+      </div>
+
+      <div class="result" id="result"></div>
+    </section>
+
+    <section class="info">
+      <h2>Length Converter কী?</h2>
+
+      <p>
+        Length Converter হলো দৈর্ঘ্যের একটি একককে অন্য এককে রূপান্তর করার
+        সহজ অনলাইন টুল। এখানে মিটার, কিলোমিটার, সেন্টিমিটার, মিলিমিটার,
+        ফুট, ইঞ্চি, গজ এবং মাইলের মধ্যে রূপান্তর করা যায়।
+      </p>
+
+      <h3>কীভাবে ব্যবহার করবেন?</h3>
+
+      <p>
+        প্রথমে যে সংখ্যাটি রূপান্তর করতে চান সেটি লিখুন। এরপর কোন একক
+        থেকে এবং কোন এককে রূপান্তর করতে চান তা নির্বাচন করুন। তারপর
+        “রূপান্তর করুন” বাটনে চাপ দিন।
+      </p>
+
+      <h3>উদাহরণ</h3>
+
+      <p>
+        আপনি যদি 1 কিলোমিটারকে মিটারে রূপান্তর করতে চান, তাহলে মান হিসেবে
+        1 লিখে “কিলোমিটার” থেকে “মিটার” নির্বাচন করুন। ফলাফল হবে
+        1000 মিটার।
+      </p>
+
+      <h3>এই টুল কোথায় কাজে লাগে?</h3>
+
+      <p>
+        পড়াশোনা, গণিতের হিসাব, নির্মাণকাজ, ভ্রমণ, দৈনন্দিন পরিমাপ এবং
+        বিভিন্ন অনলাইন হিসাবের সময় দৈর্ঘ্যের একক দ্রুত পরিবর্তন করতে
+        এই টুল ব্যবহার করা যায়।
+      </p>
+
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 TooloZo Tools — Free Online Tools
+  </footer>
+
+  <script>
+    const unitsInMeter = {
+      meter: 1,
+      kilometer: 1000,
+      centimeter: 0.01,
+      millimeter: 0.001,
+      foot: 0.3048,
+      inch: 0.0254,
+      yard: 0.9144,
+      mile: 1609.344
+    };
+
+    const unitNames = {
+      meter: "মিটার",
+      kilometer: "কিলোমিটার",
+      centimeter: "সেন্টিমিটার",
+      millimeter: "মিলিমিটার",
+      foot: "ফুট",
+      inch: "ইঞ্চি",
+      yard: "গজ",
+      mile: "মাইল"
+    };
+
+    function format
