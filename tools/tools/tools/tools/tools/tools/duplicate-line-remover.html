@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Duplicate Line Remover – একই লাইন বাদ দিন | TooloZo Tools</title>
+
+  <meta name="description" content="Duplicate Line Remover দিয়ে লেখার একই বা পুনরাবৃত্তি হওয়া লাইন সহজেই বাদ দিন। বাংলা ও ইংরেজি Text পরিষ্কার করার ফ্রি অনলাইন Tool।">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://toolozo.github.io/toolozo-tools/tools/duplicate-line-remover.html">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 24px 15px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    header p {
+      margin: 6px 0 0;
+      color: #d1d5db;
+      font-size: 15px;
+    }
+
+    nav {
+      background: white;
+      border-bottom: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #111827;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 25px auto;
+      padding: 0 15px;
+    }
+
+    .tool-box {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    }
+
+    .tool-box h2 {
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    .text-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .text-area-box h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 270px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      resize: vertical;
+      outline: none;
+      line-height: 1.6;
+    }
+
+    textarea:focus {
+      border-color: #555;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    button {
+      padding: 10px 18px;
+      border: none;
+      border-radius: 7px;
+      background: #111827;
+      color: white;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .result {
+      margin-top: 15px;
+      padding: 12px;
+      background: #f3f4f6;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 15px;
+    }
+
+    .content {
+      background: white;
+      margin-top: 20px;
+      padding: 22px;
+      border-radius: 12px;
+    }
+
+    .content h2 {
+      font-size: 22px;
+      margin-top: 0;
+    }
+
+    .content h3 {
+      font-size: 18px;
+      margin-top: 22px;
+    }
+
+    footer {
+      margin-top: 30px;
+      padding: 22px 15px;
+      text-align: center;
+      background: #111827;
+      color: #ddd;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    @media (max-width: 700px) {
+      header h1 {
+        font-size: 25px;
+      }
+
+      .text-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tool-box,
+      .content {
+        padding: 17px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Duplicate Line Remover</h1>
+    <p>একই লাইন একবার রেখে বাকি পুনরাবৃত্তি বাদ দিন</p>
+  </header>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../index.html#tools">Tools</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#privacy">Privacy</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+
+  <main>
+
+    <section class="tool-box">
+
+      <h2>Duplicate Line Remover</h2>
+
+      <p>
+        নিচের বক্সে আপনার লেখা বা লাইনের তালিকা Paste করুন।
+        একই লাইন একাধিকবার থাকলে এই Tool একটি লাইন রেখে
+        বাকি পুনরাবৃত্তি লাইনগুলো বাদ দেবে।
+      </p>
+
+      <div class="text-grid">
+
+        <div class="text-area-box">
+
+          <h3>আপনার লেখা</h3>
+
+          <textarea
+            id="inputText"
+            placeholder="প্রতিটি লাইন আলাদা করে লিখুন বা Paste করুন..."
+          ></textarea>
+
+        </div>
+
+        <div class="text-area-box">
+
+          <h3>Duplicate বাদ দেওয়ার পর</h3>
+
+          <textarea
+            id="outputText"
+            placeholder="ফলাফল এখানে দেখা যাবে..."
+            readonly
+          ></textarea>
+
+        </div>
+
+      </div>
+
+      <div class="buttons">
+
+        <button onclick="removeDuplicates()">
+          Remove Duplicate Lines
+        </button>
+
+        <button onclick="copyResult()">
+          Copy Result
+        </button>
+
+        <button onclick="clearText()">
+          Clear
+        </button>
+
+      </div>
+
+      <div class="result" id="result">
+        কোনো লাইন এখনো দেওয়া হয়নি।
+      </div>
+
+    </section>
+
+    <section class="content">
+
+      <h2>Duplicate Line Remover কী?</h2>
+
+      <p>
+        Duplicate Line Remover হলো এমন একটি অনলাইন Text Tool,
+        যার মাধ্যমে একই লেখা বা লাইন বারবার থাকলে সেগুলো সহজেই
+        বাদ দেওয়া যায়। প্রতিটি আলাদা লাইন থেকে একটি করে লাইন
+        রাখা হয়।
+      </p>
+
+      <h3>এই Tool কখন কাজে লাগে?</h3>
+
+      <p>
+        বড় কোনো Text List, নামের তালিকা, Keyword List, Content List
+        অথবা Copy-Paste করা লেখায় একই লাইন বারবার থাকলে Duplicate
+        Line Remover ব্যবহার করে দ্রুত তালিকাটি পরিষ্কার করা যায়।
+      </p>
+
+      <h3>কীভাবে Duplicate Line বাদ দেবেন?</h3>
+
+      <p>
+        আপনার লেখাটি প্রথম বক্সে Paste করুন। প্রতিটি আলাদা তথ্য
+        বা লাইন নতুন লাইনে রাখুন। এরপর “Remove Duplicate Lines”
+        বাটনে চাপ দিন।
+      </p>
+
+      <h3>বাংলা লেখার Duplicate Line বাদ দেওয়া যাবে?</h3>
+
+      <p>
+        হ্যাঁ। বাংলা ও ইংরেজি—দুই ধরনের সাধারণ Text-এর
+        পুনরাবৃত্তি হওয়া লাইন বাদ দিতে এই Tool ব্যবহার করা যায়।
+      </p>
+
+      <h3>Duplicate Line Remover কি ফ্রি?</h3>
+
+      <p>
+        হ্যাঁ। TooloZo-এর এই Duplicate Line Remover অনলাইনে
+        বিনামূল্যে ব্যবহার করা যায়।
+      </p>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    <div>
+      © 2026 TooloZo Tools
+    </div>
+
+    <div style="margin-top: 8px;">
+      <a href="../index.html">Home</a> |
+      <a href="../index.html#about">About</a> |
+      <a href="../index.html#privacy">Privacy</a> |
+      <a href="../index.html#contact">Contact</a>
+    </div>
+
+  </footer>
+
+  <script>
+
+    const inputText = document.getElementById("inputText");
+    const outputText = document.getElementById("outputText");
+    const result = document.getElementById("result");
+
+    function removeDuplicates() {
+
+      const text = inputText.value;
+
+      if (!text.trim()) {
+        outputText.value = "";
+        result.textContent = "কোনো লাইন এখনো দেওয়া হয়নি।";
+        return;
+      }
+
+      const lines = text.split(/\r?\n/);
+
+      const seen = new Set();
+      const uniqueLines = [];
+      let duplicateCount = 0;
+
+      lines.forEach(function(line) {
+
+        const cleanedLine = line.trim();
+
+        if (cleanedLine === "") {
+          return;
+        }
+
+        if (!seen.has(cleanedLine)) {
+
+          seen.add(cleanedLine);
+          uniqueLines.push(cleanedLine);
+
+        } else {
+
+          duplicateCount++;
+
+        }
+
+      });
+
+      outputText.value = uniqueLines.join("\n");
+
+      result.textContent =
+        "মোট " + lines.filter(line => line.trim() !== "").length +
+        "টি লাইনের মধ্যে " + duplicateCount +
+        "টি Duplicate Line বাদ দেওয়া হয়েছে।";
+    }
+
+    function copyResult() {
+
+      if (!outputText.value) {
+        return;
+      }
+
+      navigator.clipboard.writeText(outputText.value)
+        .then(function() {
+          alert("ফলাফল Copy হয়েছে।");
+        })
+        .catch(function() {
+          outputText.select();
+          document.execCommand("copy");
+          alert("ফলাফল Copy হয়েছে।");
+        });
+    }
+
+    function clearText() {
+
+      inputText.value = "";
+      outputText.value = "";
+      result.textContent = "কোনো লাইন এখনো দেওয়া হয়নি।";
+
+      inputText.focus();
+    }
+
+  </script>
+
+</body>
+</html>
