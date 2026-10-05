@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Remove Extra Spaces Online – অতিরিক্ত Space বাদ দিন | TooloZo Tools</title>
+
+  <meta name="description" content="Remove Extra Spaces Online দিয়ে লেখার অতিরিক্ত Space, ফাঁকা জায়গা ও অপ্রয়োজনীয় Line সহজেই পরিষ্কার করুন। বাংলা ও ইংরেজি লেখার জন্য ফ্রি অনলাইন Text Cleaner।">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://toolozo.github.io/toolozo-tools/tools/remove-extra-spaces.html">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 24px 15px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    header p {
+      margin: 6px 0 0;
+      color: #d1d5db;
+      font-size: 15px;
+    }
+
+    nav {
+      background: white;
+      border-bottom: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #111827;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 25px auto;
+      padding: 0 15px;
+    }
+
+    .tool-box {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    }
+
+    .tool-box h2 {
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    .text-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .text-area-box h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 260px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      resize: vertical;
+      outline: none;
+      line-height: 1.6;
+    }
+
+    textarea:focus {
+      border-color: #555;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+
+    button {
+      padding: 10px 18px;
+      border: none;
+      border-radius: 7px;
+      background: #111827;
+      color: white;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .content {
+      background: white;
+      margin-top: 20px;
+      padding: 22px;
+      border-radius: 12px;
+    }
+
+    .content h2 {
+      font-size: 22px;
+      margin-top: 0;
+    }
+
+    .content h3 {
+      font-size: 18px;
+      margin-top: 22px;
+    }
+
+    footer {
+      margin-top: 30px;
+      padding: 22px 15px;
+      text-align: center;
+      background: #111827;
+      color: #ddd;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    @media (max-width: 700px) {
+      header h1 {
+        font-size: 25px;
+      }
+
+      .text-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tool-box,
+      .content {
+        padding: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Remove Extra Spaces Online</h1>
+    <p>লেখার অতিরিক্ত Space সহজেই পরিষ্কার করুন</p>
+  </header>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../index.html#tools">Tools</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#privacy">Privacy</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+
+  <main>
+
+    <section class="tool-box">
+
+      <h2>Remove Extra Spaces</h2>
+
+      <p>
+        আপনার লেখাটি নিচের বক্সে Paste করুন। এই টুল অতিরিক্ত
+        Space কমিয়ে লেখাটিকে পরিষ্কার ও সহজে ব্যবহারযোগ্য করে দেবে।
+      </p>
+
+      <div class="text-grid">
+
+        <div class="text-area-box">
+          <h3>আপনার লেখা</h3>
+
+          <textarea
+            id="inputText"
+            placeholder="এখানে আপনার লেখা Paste করুন..."
+          ></textarea>
+        </div>
+
+        <div class="text-area-box">
+          <h3>পরিষ্কার লেখা</h3>
+
+          <textarea
+            id="outputText"
+            placeholder="পরিষ্কার করা লেখা এখানে দেখা যাবে..."
+            readonly
+          ></textarea>
+        </div>
+
+      </div>
+
+      <div class="buttons">
+        <button onclick="removeSpaces()">Remove Extra Spaces</button>
+        <button onclick="copyResult()">Copy Result</button>
+        <button onclick="clearText()">Clear</button>
+      </div>
+
+    </section>
+
+    <section class="content">
+
+      <h2>Remove Extra Spaces Tool কী?</h2>
+
+      <p>
+        Remove Extra Spaces একটি Text Cleaning Tool। লেখার মধ্যে
+        ভুল করে একাধিক Space থাকলে এই টুলের মাধ্যমে সেগুলো সহজেই
+        কমিয়ে পরিষ্কার করা যায়।
+      </p>
+
+      <h3>কেন অতিরিক্ত Space বাদ দেবেন?</h3>
+
+      <p>
+        Copy-Paste করার সময় বা বিভিন্ন জায়গা থেকে লেখা সংগ্রহ করার
+        পর অনেক সময় শব্দের মধ্যে অপ্রয়োজনীয় Space তৈরি হয়। এতে
+        লেখা দেখতে অগোছালো হতে পারে। এই টুল সেই অতিরিক্ত Space
+        পরিষ্কার করতে সাহায্য করে।
+      </p>
+
+      <h3>কীভাবে ব্যবহার করবেন?</h3>
+
+      <p>
+        প্রথম বক্সে আপনার লেখা Paste করুন। এরপর
+        “Remove Extra Spaces” বাটনে চাপ দিন। পরিষ্কার করা লেখাটি
+        পাশের বক্সে দেখা যাবে।
+      </p>
+
+      <h3>বাংলা লেখার অতিরিক্ত Space বাদ দেওয়া যাবে?</h3>
+
+      <p>
+        হ্যাঁ। বাংলা, ইংরেজি বা সাধারণ Text এই টুলে ব্যবহার করা যায়।
+      </p>
+
+      <h3>এই Text Cleaner কি ফ্রি?</h3>
+
+      <p>
+        হ্যাঁ। TooloZo-এর Remove Extra Spaces Tool বিনামূল্যে
+        অনলাইনে ব্যবহার করা যায়।
+      </p>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    <div>
+      © 2026 TooloZo Tools
+    </div>
+
+    <div style="margin-top: 8px;">
+      <a href="../index.html">Home</a> |
+      <a href="../index.html#about">About</a> |
+      <a href="../index.html#privacy">Privacy</a> |
+      <a href="../index.html#contact">Contact</a>
+    </div>
+
+  </footer>
+
+  <script>
+
+    const inputText = document.getElementById("inputText");
+    const outputText = document.getElementById("outputText");
+
+    function removeSpaces() {
+
+      const text = inputText.value;
+
+      if (!text.trim()) {
+        outputText.value = "";
+        return;
+      }
+
+      const cleanedText = text
+        .replace(/[ \t]+/g, " ")
+        .replace(/^[ \t]+|[ \t]+$/gm, "");
+
+      outputText.value = cleanedText;
+    }
+
+    function copyResult() {
+
+      if (!outputText.value) {
+        return;
+      }
+
+      navigator.clipboard.writeText(outputText.value)
+        .then(function() {
+          alert("পরিষ্কার করা লেখা Copy হয়েছে।");
+        })
+        .catch(function() {
+          outputText.select();
+          document.execCommand("copy");
+          alert("পরিষ্কার করা লেখা Copy হয়েছে।");
+        });
+    }
+
+    function clearText() {
+
+      inputText.value = "";
+      outputText.value = "";
+      inputText.focus();
+    }
+
+  </script>
+
+</body>
+</html>
