@@ -1,22 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TooloZo Tools</title>
-<meta name="description" content="Free online tools for text, writing, SEO and everyday tasks.">
+
+<title>TooloZo Tools - Free Online Tools</title>
+
+<meta name="description" content="Free online tools for text, writing, names and everyday tasks.">
+
 <style>
-body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#222}
-header{background:#1f2937;color:white;text-align:center;padding:30px 15px}
-header h1{margin:0 0 8px}
-nav{background:white;text-align:center;padding:15px;border-bottom:1px solid #ddd}
-nav a{margin:0 8px;color:#2563eb;text-decoration:none;font-weight:bold}
-main{max-width:1000px;margin:25px auto;padding:0 15px}
-.box{background:white;padding:20px;margin-bottom:20px;border-radius:10px;box-shadow:0 2px 8px #ddd}
-textarea{width:100%;height:120px;padding:10px;box-sizing:border-box;font-size:16px}
-button{margin:8px 5px 0 0;padding:10px 15px;background:#2563eb;color:white;border:0;border-radius:6px}
-.result{margin-top:10px;padding:10px;background:#f1f3f5;border-radius:6px}
-footer{background:#1f2937;color:white;text-align:center;padding:25px}
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#222;
+}
+
+header{
+background:#1f2937;
+color:white;
+text-align:center;
+padding:30px 15px;
+}
+
+header h1{
+margin:0 0 8px;
+}
+
+nav{
+background:white;
+text-align:center;
+padding:15px;
+border-bottom:1px solid #ddd;
+}
+
+nav a{
+margin:0 8px;
+color:#2563eb;
+text-decoration:none;
+font-weight:bold;
+}
+
+main{
+max-width:1000px;
+margin:25px auto;
+padding:0 15px;
+}
+
+.box{
+background:white;
+padding:20px;
+margin-bottom:20px;
+border-radius:10px;
+box-shadow:0 2px 8px #ddd;
+}
+
+textarea,
+input{
+width:100%;
+padding:10px;
+box-sizing:border-box;
+font-size:16px;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+textarea{
+height:120px;
+}
+
+input{
+height:45px;
+}
+
+button{
+margin:8px 5px 0 0;
+padding:10px 15px;
+background:#2563eb;
+color:white;
+border:0;
+border-radius:6px;
+cursor:pointer;
+font-size:15px;
+}
+
+button:hover{
+opacity:.9;
+}
+
+.result{
+margin-top:10px;
+padding:15px;
+background:#f1f3f5;
+border-radius:6px;
+line-height:1.7;
+}
+
+.name-result{
+text-align:center;
+font-size:17px;
+}
+
+.share-btn{
+background:#16a34a;
+}
+
+footer{
+background:#1f2937;
+color:white;
+text-align:center;
+padding:25px;
+}
 </style>
 </head>
 
@@ -39,40 +133,689 @@ footer{background:#1f2937;color:white;text-align:center;padding:25px}
 
 <div class="box" id="home">
 <h2>Free Online Tools</h2>
-<p>Simple and free tools for writing, text editing and everyday tasks.</p>
+<p>
+Simple and free tools for writing, names, text editing and everyday tasks.
+</p>
 </div>
 
 <div id="tools">
 
+<!-- Word Counter -->
+
 <div class="box">
 <h2>Word Counter</h2>
+
 <textarea id="words" placeholder="Type or paste text here"></textarea>
+
 <button onclick="wordCount()">Count Words</button>
-<div class="result" id="wordResult">Words: 0</div>
+
+<div class="result" id="wordResult">
+Words: 0
 </div>
+
+</div>
+
+
+<!-- Character Counter -->
 
 <div class="box">
 <h2>Character Counter</h2>
+
 <textarea id="chars" placeholder="Type or paste text here"></textarea>
+
 <button onclick="charCount()">Count Characters</button>
-<div class="result" id="charResult">Characters: 0</div>
+
+<div class="result" id="charResult">
+Characters: 0
 </div>
+
+</div>
+
+
+<!-- Text Case Converter -->
 
 <div class="box">
 <h2>Text Case Converter</h2>
+
 <textarea id="caseText" placeholder="Type or paste text here"></textarea>
+
 <button onclick="makeUpper()">UPPERCASE</button>
 <button onclick="makeLower()">lowercase</button>
-<div class="result" id="caseResult">Converted text will appear here.</div>
+
+<div class="result" id="caseResult">
+Converted text will appear here.
 </div>
+
+</div>
+
+
+<!-- Remove Extra Spaces -->
 
 <div class="box">
 <h2>Remove Extra Spaces</h2>
+
 <textarea id="spaceText" placeholder="Paste text with extra spaces"></textarea>
+
 <button onclick="cleanSpaces()">Clean Text</button>
-<div class="result" id="spaceResult">Cleaned text will appear here.</div>
+
+<div class="result" id="spaceResult">
+Cleaned text will appear here.
 </div>
+
+</div>
+
+
+<!-- Reading Time Calculator -->
 
 <div class="box">
 <h2>Reading Time Calculator</h2>
-<textarea id="read
+
+<textarea id="readText" placeholder="Paste your article or text here"></textarea>
+
+<button onclick="readingTime()">Calculate Reading Time</button>
+
+<div class="result" id="readResult">
+Reading time will appear here.
+</div>
+
+</div>
+
+
+<!-- Name Meaning Finder -->
+
+<div class="box">
+
+<h2>আপনার নামের অর্থ কী?</h2>
+
+<p>
+আপনার নাম লিখুন এবং নামটির অর্থ জেনে নিন।
+</p>
+
+<input
+type="text"
+id="nameInput"
+placeholder="যেমন: শুভ, মিম, Tanzin, Miki"
+>
+
+<button onclick="findNameMeaning()">
+নামের অর্থ দেখুন
+</button>
+
+<div class="result name-result" id="nameResult">
+আপনার নামের অর্থ এখানে দেখা যাবে।
+</div>
+
+</div>
+
+</div>
+
+
+<!-- About -->
+
+<div class="box" id="about">
+
+<h2>About TooloZo Tools</h2>
+
+<p>
+TooloZo Tools is a free online tools website for simple writing,
+text, names and everyday tasks.
+</p>
+
+</div>
+
+
+<!-- Privacy -->
+
+<div class="box" id="privacy">
+
+<h2>Privacy Policy</h2>
+
+<p>
+TooloZo Tools provides browser-based tools.
+Text and names entered into the tools are processed in your browser
+for the requested task.
+</p>
+
+</div>
+
+
+<!-- Contact -->
+
+<div class="box" id="contact">
+
+<h2>Contact</h2>
+
+<p>
+For questions, suggestions or feedback about TooloZo Tools,
+please contact the website owner.
+</p>
+
+</div>
+
+</main>
+
+
+<footer>
+
+<p>© 2026 TooloZo Tools. All rights reserved.</p>
+
+</footer>
+
+
+<script>
+
+/* Word Counter */
+
+function wordCount(){
+
+var t=document.getElementById("words").value.trim();
+
+document.getElementById("wordResult").innerText=
+"Words: "+(t?t.split(/\s+/).length:0);
+
+}
+
+
+/* Character Counter */
+
+function charCount(){
+
+var t=document.getElementById("chars").value;
+
+document.getElementById("charResult").innerText=
+"Characters: "+t.length;
+
+}
+
+
+/* Text Case Converter */
+
+function makeUpper(){
+
+document.getElementById("caseResult").innerText=
+document.getElementById("caseText").value.toUpperCase();
+
+}
+
+function makeLower(){
+
+document.getElementById("caseResult").innerText=
+document.getElementById("caseText").value.toLowerCase();
+
+}
+
+
+/* Remove Extra Spaces */
+
+function cleanSpaces(){
+
+var t=document.getElementById("spaceText").value
+.replace(/\s+/g," ")
+.trim();
+
+document.getElementById("spaceResult").innerText=t;
+
+}
+
+
+/* Reading Time Calculator */
+
+function readingTime(){
+
+var t=document.getElementById("readText").value.trim();
+
+var words=t?t.split(/\s+/).length:0;
+
+var minutes=words?Math.ceil(words/200):0;
+
+document.getElementById("readResult").innerText=
+"Words: "+words+
+" | Reading time: "+minutes+" minute(s)";
+
+}
+
+
+/* Name Meaning Database */
+
+var nameData={
+
+"শুভ":{
+meaning:"মঙ্গলময়, কল্যাণকর, সৌভাগ্যপূর্ণ",
+origin:"সংস্কৃত"
+},
+
+"shuvo":{
+meaning:"মঙ্গলময়, কল্যাণকর, সৌভাগ্যপূর্ণ",
+origin:"সংস্কৃত"
+},
+
+"শুভ্র":{
+meaning:"সাদা, নির্মল, পবিত্র",
+origin:"সংস্কৃত"
+},
+
+"শুভম":{
+meaning:"মঙ্গল, কল্যাণ, শুভ",
+origin:"সংস্কৃত"
+},
+
+"পিয়া":{
+meaning:"প্রিয়, ভালোবাসার মানুষ",
+origin:"বাংলা"
+},
+
+"পিয়া":{
+meaning:"প্রিয়, ভালোবাসার মানুষ",
+origin:"বাংলা"
+},
+
+"piya":{
+meaning:"প্রিয়, ভালোবাসার মানুষ",
+origin:"বাংলা"
+},
+
+"জোনাকি":{
+meaning:"অন্ধকারে জ্বলে ওঠা আলো; জোনাকি পোকা",
+origin:"বাংলা"
+},
+
+"jonaki":{
+meaning:"অন্ধকারে জ্বলে ওঠা আলো; জোনাকি পোকা",
+origin:"বাংলা"
+},
+
+"মিম":{
+meaning:"আরবি বর্ণমালার একটি অক্ষর; প্রচলিত আরবি নাম",
+origin:"আরবি"
+},
+
+"mim":{
+meaning:"আরবি বর্ণমালার একটি অক্ষর; প্রচলিত আরবি নাম",
+origin:"আরবি"
+},
+
+"আয়েশা":{
+meaning:"জীবন্ত, সুখী জীবনযাপনকারী",
+origin:"আরবি"
+},
+
+"আয়েশা":{
+meaning:"জীবন্ত, সুখী জীবনযাপনকারী",
+origin:"আরবি"
+},
+
+"ayesha":{
+meaning:"জীবন্ত, সুখী জীবনযাপনকারী",
+origin:"আরবি"
+},
+
+"aisha":{
+meaning:"জীবন্ত, সুখী জীবনযাপনকারী",
+origin:"আরবি"
+},
+
+"ফাতিমা":{
+meaning:"সংযমী, পবিত্র; প্রচলিত আরবি নাম",
+origin:"আরবি"
+},
+
+"fatima":{
+meaning:"সংযমী, পবিত্র; প্রচলিত আরবি নাম",
+origin:"আরবি"
+},
+
+"নুসরাত":{
+meaning:"সাহায্য, বিজয়, সমর্থন",
+origin:"আরবি"
+},
+
+"nusrat":{
+meaning:"সাহায্য, বিজয়, সমর্থন",
+origin:"আরবি"
+},
+
+"রাহিম":{
+meaning:"দয়ালু, করুণাময়",
+origin:"আরবি"
+},
+
+"রহিম":{
+meaning:"দয়ালু, করুণাময়",
+origin:"আরবি"
+},
+
+"rahim":{
+meaning:"দয়ালু, করুণাময়",
+origin:"আরবি"
+},
+
+"সাকিব":{
+meaning:"উজ্জ্বল, দীপ্তিমান",
+origin:"আরবি"
+},
+
+"sakib":{
+meaning:"উজ্জ্বল, দীপ্তিমান",
+origin:"আরবি"
+},
+
+"সাদিয়া":{
+meaning:"সৌভাগ্যবতী, সুখী",
+origin:"আরবি"
+},
+
+"সাদিয়া":{
+meaning:"সৌভাগ্যবতী, সুখী",
+origin:"আরবি"
+},
+
+"sadia":{
+meaning:"সৌভাগ্যবতী, সুখী",
+origin:"আরবি"
+},
+
+"তানভীর":{
+meaning:"আলোকিত, দীপ্তিমান",
+origin:"আরবি"
+},
+
+"tanvir":{
+meaning:"আলোকিত, দীপ্তিমান",
+origin:"আরবি"
+},
+
+"আরিফ":{
+meaning:"জ্ঞানী, অবগত",
+origin:"আরবি"
+},
+
+"arif":{
+meaning:"জ্ঞানী, অবগত",
+origin:"আরবি"
+},
+
+"আরিফা":{
+meaning:"জ্ঞানী, অবগত",
+origin:"আরবি"
+},
+
+"arifa":{
+meaning:"জ্ঞানী, অবগত",
+origin:"আরবি"
+},
+
+"রাফি":{
+meaning:"উচ্চ, মর্যাদাশীল",
+origin:"আরবি"
+},
+
+"rafi":{
+meaning:"উচ্চ, মর্যাদাশীল",
+origin:"আরবি"
+},
+
+"রাফিয়া":{
+meaning:"উচ্চ মর্যাদার, উন্নত",
+origin:"আরবি"
+},
+
+"রাফিয়া":{
+meaning:"উচ্চ মর্যাদার, উন্নত",
+origin:"আরবি"
+},
+
+"rafia":{
+meaning:"উচ্চ মর্যাদার, উন্নত",
+origin:"আরবি"
+},
+
+"সুমাইয়া":{
+meaning:"উচ্চ মর্যাদার নারী; প্রচলিত আরবি নাম",
+origin:"আরবি"
+},
+
+"সুমাইয়া":{
+meaning:"উচ্চ মর্যাদার নারী; প্রচলিত আরবি নাম",
+origin:"আরবি"
+},
+
+"sumaiya":{
+meaning:"উচ্চ মর্যাদার নারী; প্রচলিত আরবি নাম",
+origin:"আরবি"
+},
+
+"সোহান":{
+meaning:"সুন্দর, মনোহর",
+origin:"প্রচলিত"
+},
+
+"sohan":{
+meaning:"সুন্দর, মনোহর",
+origin:"প্রচলিত"
+},
+
+"রনি":{
+meaning:"আনন্দময় বা আনন্দের সঙ্গে সম্পর্কিত প্রচলিত নাম",
+origin:"প্রচলিত"
+},
+
+"রনি":{
+meaning:"আনন্দময় বা আনন্দের সঙ্গে সম্পর্কিত প্রচলিত নাম",
+origin:"প্রচলিত"
+},
+
+"rony":{
+meaning:"আনন্দময় বা আনন্দের সঙ্গে সম্পর্কিত প্রচলিত নাম",
+origin:"প্রচলিত"
+},
+
+"মাহি":{
+meaning:"পৃথিবী; সুন্দরী বা প্রিয় নাম হিসেবেও প্রচলিত",
+origin:"ফারসি/প্রচলিত"
+},
+
+"mahi":{
+meaning:"পৃথিবী; সুন্দরী বা প্রিয় নাম হিসেবেও প্রচলিত",
+origin:"ফারসি/প্রচলিত"
+},
+
+"আকাশ":{
+meaning:"আকাশ, বিস্তৃত নীল গগন",
+origin:"বাংলা/সংস্কৃত"
+},
+
+"akash":{
+meaning:"আকাশ, বিস্তৃত নীল গগন",
+origin:"বাংলা/সংস্কৃত"
+},
+
+"নীল":{
+meaning:"নীল রং; নীল আকাশ বা নীলিমার সঙ্গে সম্পর্কিত",
+origin:"সংস্কৃত"
+},
+
+"neel":{
+meaning:"নীল রং; নীল আকাশ বা নীলিমার সঙ্গে সম্পর্কিত",
+origin:"সংস্কৃত"
+},
+
+"আলো":{
+meaning:"জ্যোতি, আলোক, উজ্জ্বলতা",
+origin:"বাংলা"
+},
+
+"alo":{
+meaning:"জ্যোতি, আলোক, উজ্জ্বলতা",
+origin:"বাংলা"
+},
+
+"নিশা":{
+meaning:"রাত, রজনী",
+origin:"সংস্কৃত"
+},
+
+"nisha":{
+meaning:"রাত, রজনী",
+origin:"সংস্কৃত"
+},
+
+"বৃষ্টি":{
+meaning:"বৃষ্টির পানি, বর্ষণ",
+origin:"বাংলা"
+},
+
+"brishti":{
+meaning:"বৃষ্টির পানি, বর্ষণ",
+origin:"বাংলা"
+},
+
+"মেঘ":{
+meaning:"আকাশের মেঘ",
+origin:"বাংলা"
+},
+
+"megh":{
+meaning:"আকাশের মেঘ",
+origin:"বাংলা"
+},
+
+"রিয়া":{
+meaning:"গান, সৌন্দর্য বা আনন্দের সঙ্গে সম্পর্কিত প্রচলিত নাম",
+origin:"প্রচলিত"
+},
+
+"রিয়া":{
+meaning:"গান, সৌন্দর্য বা আনন্দের সঙ্গে সম্পর্কিত প্রচলিত নাম",
+origin:"প্রচলিত"
+},
+
+"riya":{
+meaning:"গান, সৌন্দর্য বা আনন্দের সঙ্গে সম্পর্কিত প্রচলিত নাম",
+origin:"প্রচলিত"
+},
+
+/* তাজরিন এবং Tanzin */
+
+"তাজরিন":{
+meaning:"উজ্জ্বল, দীপ্তিময়; প্রচলিত আধুনিক নাম",
+origin:"প্রচলিত"
+},
+
+"tanzin":{
+meaning:"সুশৃঙ্খল, সুন্দরভাবে সাজানো বা বিন্যস্ত",
+origin:"আরবি/প্রচলিত"
+},
+
+/* তাজরিন সুলতানা - আলাদা পূর্ণ নাম */
+
+"তাজরিন সুলতানা":{
+meaning:"তাজরিন — উজ্জ্বল বা দীপ্তিময়; সুলতানা — রাণী বা নারী শাসক",
+origin:"আরবি/প্রচলিত"
+},
+
+"tanzin sultana":{
+meaning:"Tanzin — সুশৃঙ্খল বা সুন্দরভাবে বিন্যস্ত; Sultana — রাণী বা নারী শাসক",
+origin:"আরবি/প্রচলিত"
+},
+
+/* মিকি - আলাদা নাম */
+
+"মিকি":{
+meaning:"Miki একটি প্রচলিত আন্তর্জাতিক নাম; বিভিন্ন ভাষা ও সংস্কৃতিতে এর আলাদা আলাদা অর্থ ও ব্যবহার রয়েছে",
+origin:"বহু সংস্কৃতিতে প্রচলিত"
+},
+
+"miki":{
+meaning:"Miki একটি প্রচলিত আন্তর্জাতিক নাম; বিভিন্ন ভাষা ও সংস্কৃতিতে এর আলাদা আলাদা অর্থ ও ব্যবহার রয়েছে",
+origin:"বহু সংস্কৃতিতে প্রচলিত"
+}
+
+};
+
+
+/* Name Meaning Finder */
+
+function findNameMeaning(){
+
+var name=document.getElementById("nameInput").value.trim();
+
+var result=document.getElementById("nameResult");
+
+if(!name){
+
+result.innerHTML="দয়া করে আগে আপনার নাম লিখুন।";
+
+return;
+
+}
+
+var key=name.toLowerCase();
+
+if(nameData[key]){
+
+result.innerHTML=
+"<strong>নাম:</strong> "+name+
+"<br><strong>অর্থ:</strong> "+nameData[key].meaning+
+"<br><strong>উৎপত্তি:</strong> "+nameData[key].origin+
+"<br><br>"+
+"<button class='share-btn' onclick='shareName()'>শেয়ার করুন</button>";
+
+}
+
+else{
+
+result.innerHTML=
+"<strong>নাম:</strong> "+name+
+"<br><br>"+
+"এই নামটির তথ্য এখনো আমাদের তালিকায় নেই।"+
+"<br>শিগগিরই আরও নাম যোগ করা হবে।";
+
+}
+
+}
+
+
+/* Share Name Meaning */
+
+function shareName(){
+
+var name=document.getElementById("nameInput").value.trim();
+
+var data=nameData[name.toLowerCase()];
+
+if(!data) return;
+
+var shareText=
+"🌸 আমার নামের অর্থ কী জানেন?\n\n"+
+"নাম: "+name+"\n"+
+"অর্থ: "+data.meaning+"\n"+
+"উৎপত্তি: "+data.origin+"\n\n"+
+"আপনার নামের অর্থ জানতে দেখুন TooloZo Tools:\n"+
+"https://toolozo.github.io/toolozo-tools/";
+
+if(navigator.share){
+
+navigator.share({
+
+title:"আমার নামের অর্থ",
+text:shareText,
+url:"https://toolozo.github.io/toolozo-tools/"
+
+});
+
+}
+
+else{
+
+navigator.clipboard.writeText(shareText);
+
+alert("শেয়ার করার লেখা কপি হয়েছে। এখন যেখানে চাই সেখানে Paste করুন।");
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
