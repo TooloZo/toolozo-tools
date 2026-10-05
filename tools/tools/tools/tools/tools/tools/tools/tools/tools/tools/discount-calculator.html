@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Discount Calculator Online – ছাড়ের পর দাম হিসাব করুন | TooloZo Tools</title>
+
+  <meta name="description" content="Discount Calculator Online দিয়ে সহজে পণ্যের Discount, ছাড়ের পর দাম এবং মোট কত টাকা সাশ্রয় হচ্ছে হিসাব করুন।">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://toolozo.github.io/toolozo-tools/tools/discount-calculator.html">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      color: #222;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 22px 15px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      color: #d1d5db;
+    }
+
+    nav {
+      background: white;
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav a {
+      color: #111827;
+      text-decoration: none;
+      margin: 0 8px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 25px auto;
+      padding: 0 15px;
+    }
+
+    .tool-box,
+    .content-box {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin: 10px 0 6px;
+    }
+
+    input {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    button {
+      border: none;
+      padding: 12px 18px;
+      margin: 8px 5px 5px 0;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .calculate-btn {
+      background: #111827;
+      color: white;
+    }
+
+    .clear-btn {
+      background: #e5e7eb;
+      color: #111827;
+    }
+
+    .result-box {
+      background: #f3f4f6;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 18px;
+    }
+
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 9px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .result-row:last-child {
+      border-bottom: none;
+    }
+
+    .result-value {
+      font-weight: bold;
+      text-align: right;
+    }
+
+    h2 {
+      color: #111827;
+      font-size: 23px;
+      margin-top: 0;
+    }
+
+    h3 {
+      color: #111827;
+      font-size: 19px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 23px;
+      }
+
+      .tool-box,
+      .content-box {
+        padding: 17px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 4px 5px;
+      }
+
+      .result-row {
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .result-value {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Discount Calculator</h1>
+    <p>ছাড়ের পর পণ্যের দাম দ্রুত হিসাব করুন</p>
+  </header>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../index.html#tools">Tools</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#privacy">Privacy</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+
+  <main class="container">
+
+    <section class="tool-box">
+
+      <h2>Discount Calculator Online</h2>
+
+      <label for="originalPrice">মূল দাম</label>
+
+      <input
+        type="number"
+        id="originalPrice"
+        min="0"
+        step="any"
+        placeholder="যেমন: 1000"
+      >
+
+      <label for="discount">Discount (%)</label>
+
+      <input
+        type="number"
+        id="discount"
+        min="0"
+        max="100"
+        step="any"
+        placeholder="যেমন: 20"
+      >
+
+      <button class="calculate-btn" onclick="calculateDiscount()">
+        Calculate
+      </button>
+
+      <button class="clear-btn" onclick="clearAll()">
+        Clear
+      </button>
+
+      <div class="result-box">
+
+        <div class="result-row">
+          <span>মূল দাম</span>
+          <span class="result-value" id="originalResult">-</span>
+        </div>
+
+        <div class="result-row">
+          <span>ছাড়ের পরিমাণ</span>
+          <span class="result-value" id="discountResult">-</span>
+        </div>
+
+        <div class="result-row">
+          <span>ছাড়ের পর দাম</span>
+          <span class="result-value" id="finalResult">-</span>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="content-box">
+
+      <h2>Discount Calculator কী?</h2>
+
+      <p>
+        Discount Calculator হলো একটি সহজ অনলাইন টুল, যার মাধ্যমে কোনো পণ্যের
+        মূল দাম এবং Discount Percentage ব্যবহার করে ছাড়ের পর কত টাকা দিতে হবে
+        তা দ্রুত হিসাব করা যায়।
+      </p>
+
+      <h3>উদাহরণ</h3>
+
+      <p>
+        ধরুন কোনো পণ্যের মূল দাম ১,০০০ টাকা এবং সেখানে ২০% Discount দেওয়া হয়েছে।
+        তাহলে ২০০ টাকা ছাড় হবে এবং ছাড়ের পর দাম হবে ৮০০ টাকা।
+      </p>
+
+      <h3>Discount হিসাবের সূত্র</h3>
+
+      <p>
+        <strong>Discount Amount = Original Price × Discount ÷ 100</strong>
+      </p>
+
+      <p>
+        এরপর:
+      </p>
+
+      <p>
+        <strong>Final Price = Original Price − Discount Amount</strong>
+      </p>
+
+      <h3>কেন Discount Calculator ব্যবহার করবেন?</h3>
+
+      <p>
+        দোকান, Online Shopping, পোশাক, ইলেকট্রনিক্স বা যেকোনো পণ্যের
+        Percentage Discount দ্রুত হিসাব করতে এই টুল ব্যবহার করা যায়।
+        হাতে হিসাব করার প্রয়োজন ছাড়াই কয়েক সেকেন্ডে ফলাফল পাওয়া যাবে।
+      </p>
+
+      <h3>এই Calculator কি যেকোনো Currency-তে ব্যবহার করা যায়?</h3>
+
+      <p>
+        হ্যাঁ। Calculator-টি শুধু সংখ্যার হিসাব করে। তাই আপনি টাকা, ডলার,
+        পাউন্ড বা অন্য যেকোনো Currency-এর পরিমাণ দিয়ে হিসাব করতে পারবেন।
+      </p>
+
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 TooloZo Tools — Free Online Tools
+  </footer>
+
+  <script>
+    function formatNumber(number) {
+      return Number.isInteger(number)
+        ? number.toString()
+        : number.toFixed(2).replace(/\.?0+$/, "");
+    }
+
+    function calculateDiscount() {
+
+      const originalPrice = parseFloat(
+        document.getElementById("originalPrice").value
+      );
+
+      const discount = parseFloat(
+        document.getElementById("discount").value
+      );
+
+      if (
+        isNaN(originalPrice) ||
+        isNaN(discount)
+      ) {
+        alert("দয়া করে মূল দাম এবং Discount Percentage লিখুন।");
+        return;
+      }
+
+      if (originalPrice < 0) {
+        alert("মূল দাম 0-এর কম হতে পারে না।");
+        return;
+      }
+
+      if (discount < 0 || discount > 100) {
+        alert("Discount Percentage 0 থেকে 100-এর মধ্যে হতে হবে।");
+        return;
+      }
+
+      const discountAmount =
+        originalPrice * discount / 100;
+
+      const finalPrice =
+        originalPrice - discountAmount;
+
+      document.getElementById("originalResult").textContent =
+        formatNumber(originalPrice);
+
+      document.getElementById("discountResult").textContent =
+        formatNumber(discountAmount);
+
+      document.getElementById("finalResult").textContent =
+        formatNumber(finalPrice);
+    }
+
+    function clearAll() {
+
+      document.getElementById("originalPrice").value = "";
+      document.getElementById("discount").value = "";
+
+      document.getElementById("originalResult").textContent = "-";
+      document.getElementById("discountResult").textContent = "-";
+      document.getElementById("finalResult").textContent = "-";
+    }
+  </script>
+
+</body>
+</html>
