@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Free online tools for text, SEO and everyday tasks.">
+  <meta name="description" content="TooloZo Tools offers free online tools for word counting, character counting, text case conversion, extra space removal and reading time calculation.">
 
   <title>TooloZo Tools - Free Online Tools</title>
 
@@ -85,6 +85,10 @@
       cursor: pointer;
     }
 
+    button:hover {
+      opacity: 0.9;
+    }
+
     .result {
       margin-top: 12px;
       padding: 12px;
@@ -123,6 +127,7 @@
 
     <section class="tools">
 
+      <!-- Word Counter -->
       <div class="tool-card">
         <h2>Word Counter</h2>
 
@@ -139,6 +144,7 @@
       </div>
 
 
+      <!-- Character Counter -->
       <div class="tool-card">
         <h2>Character Counter</h2>
 
@@ -155,6 +161,7 @@
       </div>
 
 
+      <!-- Text Case Converter -->
       <div class="tool-card">
         <h2>Text Case Converter</h2>
 
@@ -175,6 +182,7 @@
       </div>
 
 
+      <!-- Remove Extra Spaces -->
       <div class="tool-card">
         <h2>Remove Extra Spaces</h2>
 
@@ -190,6 +198,23 @@
         </div>
       </div>
 
+
+      <!-- Reading Time Calculator -->
+      <div class="tool-card">
+        <h2>Reading Time Calculator</h2>
+
+        <textarea id="readingText"
+          placeholder="Paste your article or text here..."></textarea>
+
+        <button type="button" onclick="calculateReadingTime()">
+          Calculate Reading Time
+        </button>
+
+        <div class="result" id="readingResult">
+          Reading time will appear here.
+        </div>
+      </div>
+
     </section>
 
   </main>
@@ -200,6 +225,7 @@
 
 
   <script>
+
     function countWords() {
       var text = document.getElementById("wordText").value.trim();
 
@@ -209,6 +235,7 @@
       }
 
       var words = text.split(/\s+/);
+
       document.getElementById("wordResult").textContent =
         "Words: " + words.length;
     }
@@ -246,6 +273,27 @@
       document.getElementById("spaceResult").textContent =
         cleaned;
     }
+
+
+    function calculateReadingTime() {
+      var text = document.getElementById("readingText").value.trim();
+
+      if (text === "") {
+        document.getElementById("readingResult").textContent =
+          "Reading time: 0 minutes";
+        return;
+      }
+
+      var words = text.split(/\s+/).length;
+
+      var wordsPerMinute = 200;
+
+      var minutes = Math.ceil(words / wordsPerMinute);
+
+      document.getElementById("readingResult").textContent =
+        "Words: " + words + " | Reading time: " + minutes + " minute(s)";
+    }
+
   </script>
 
 </body>
