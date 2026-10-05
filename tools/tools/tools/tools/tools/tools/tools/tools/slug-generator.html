@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Slug Generator Online – SEO Friendly URL তৈরি করুন | TooloZo Tools</title>
+
+  <meta name="description" content="Slug Generator Online ব্যবহার করে Blog Post ও Web Page-এর জন্য পরিষ্কার SEO Friendly URL Slug তৈরি করুন। সহজে Slug তৈরি, Copy ও Clear করুন।">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://toolozo.github.io/toolozo-tools/tools/slug-generator.html">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      color: #222;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 22px 15px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      color: #d1d5db;
+    }
+
+    nav {
+      background: white;
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav a {
+      color: #111827;
+      text-decoration: none;
+      margin: 0 8px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 25px auto;
+      padding: 0 15px;
+    }
+
+    .tool-box,
+    .content-box {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .result-box {
+      width: 100%;
+      min-height: 100px;
+      padding: 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #f9fafb;
+      word-break: break-word;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      border: none;
+      padding: 12px 18px;
+      margin: 5px 5px 5px 0;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .generate-btn {
+      background: #111827;
+      color: white;
+    }
+
+    .copy-btn {
+      background: #2563eb;
+      color: white;
+    }
+
+    .clear-btn {
+      background: #e5e7eb;
+      color: #111827;
+    }
+
+    .info {
+      background: #f3f4f6;
+      padding: 10px 14px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    h2 {
+      color: #111827;
+      font-size: 23px;
+      margin-top: 0;
+    }
+
+    h3 {
+      color: #111827;
+      font-size: 19px;
+    }
+
+    code {
+      background: #f3f4f6;
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 23px;
+      }
+
+      .tool-box,
+      .content-box {
+        padding: 17px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 4px 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Slug Generator</h1>
+    <p>SEO Friendly URL Slug তৈরি করুন</p>
+  </header>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../index.html#tools">Tools</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#privacy">Privacy</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+
+  <main class="container">
+
+    <section class="tool-box">
+
+      <h2>Slug Generator Online</h2>
+
+      <label for="inputText">Title বা Text লিখুন</label>
+
+      <input
+        type="text"
+        id="inputText"
+        placeholder="যেমন: How to Write a Blog Post"
+      >
+
+      <button class="generate-btn" onclick="generateSlug()">
+        Generate Slug
+      </button>
+
+      <button class="clear-btn" onclick="clearAll()">
+        Clear
+      </button>
+
+      <div class="info">
+        আপনার তৈরি Slug এখানে দেখা যাবে:
+      </div>
+
+      <label>Generated Slug</label>
+
+      <div class="result-box" id="result">
+        Slug এখানে দেখা যাবে।
+      </div>
+
+      <button class="copy-btn" onclick="copySlug()">
+        Copy Slug
+      </button>
+
+    </section>
+
+    <section class="content-box">
+
+      <h2>Slug Generator কী?</h2>
+
+      <p>
+        Slug Generator হলো এমন একটি অনলাইন টুল, যার মাধ্যমে Blog Post,
+        Website Page বা অন্য কোনো Web Content-এর Title থেকে পরিষ্কার URL Slug
+        তৈরি করা যায়।
+      </p>
+
+      <h3>URL Slug কী?</h3>
+
+      <p>
+        কোনো Web Page-এর URL-এর যে অংশটি সাধারণত পেজের বিষয় বা Title বোঝাতে
+        ব্যবহার করা হয়, তাকে Slug বলা হয়। যেমন:
+      </p>
+
+      <p>
+        <code>how-to-write-a-blog-post</code>
+      </p>
+
+      <h3>Slug কেন ব্যবহার করবেন?</h3>
+
+      <p>
+        পরিষ্কার ও অর্থবহ Slug ব্যবহার করলে একটি URL সহজে পড়া ও বোঝা যায়।
+        Blog, Website এবং SEO Content তৈরির সময় এটি বিশেষভাবে কাজে লাগে।
+      </p>
+
+      <h3>এই Slug Generator কীভাবে কাজ করে?</h3>
+
+      <p>
+        এই টুলটি আপনার দেওয়া Text থেকে অপ্রয়োজনীয় বিশেষ চিহ্ন বাদ দিয়ে
+        ছোট হাতের অক্ষর ব্যবহার করে শব্দগুলোর মাঝখানে Hyphen বসায়।
+        যেমন, “How to Write a Blog Post” থেকে
+        <code>how-to-write-a-blog-post</code> তৈরি হবে।
+      </p>
+
+      <h3>বাংলা Text-এর ক্ষেত্রে</h3>
+
+      <p>
+        বাংলা লেখা দিলে টুলটি বাংলা অক্ষর ও শব্দগুলোকে যতটা সম্ভব রেখে
+        Slug তৈরি করবে। তবে Website-এর URL ব্যবহারের জন্য অনেক ক্ষেত্রে
+        English Slug বেশি সুবিধাজনক হতে পারে।
+      </p>
+
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 TooloZo Tools — Free Online Tools
+  </footer>
+
+  <script>
+    function generateSlug() {
+      const input = document.getElementById("inputText").value.trim();
+      const result = document.getElementById("result");
+
+      if (!input) {
+        result.textContent = "দয়া করে আগে একটি Title বা Text লিখুন।";
+        return;
+      }
