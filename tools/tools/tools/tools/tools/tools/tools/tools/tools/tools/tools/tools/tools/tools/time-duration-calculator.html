@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Time Duration Calculator – সময়ের ব্যবধান হিসাব করুন | TooloZo Tools</title>
+
+  <meta name="description" content="Time Duration Calculator দিয়ে দুটি সময়ের মধ্যে কত ঘণ্টা, মিনিট ও সেকেন্ড ব্যবধান তা সহজে হিসাব করুন। দ্রুত ও বিনামূল্যে অনলাইনে সময়ের পার্থক্য বের করুন।">
+
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://toolozo.github.io/toolozo-tools/tools/time-duration-calculator.html">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 22px 15px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 5px;
+      font-size: 28px;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    nav {
+      background: white;
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav a {
+      color: #111827;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 760px;
+      margin: 25px auto;
+      padding: 0 15px;
+    }
+
+    .tool-box {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    .tool-box h2 {
+      margin-top: 0;
+      font-size: 22px;
+    }
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      font-weight: bold;
+    }
+
+    input[type="time"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 7px;
+      font-size: 16px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    button {
+      border: none;
+      padding: 11px 18px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .calculate {
+      background: #111827;
+      color: white;
+    }
+
+    .clear {
+      background: #e5e7eb;
+      color: #111827;
+    }
+
+    .result {
+      margin-top: 22px;
+      background: #f3f4f6;
+      padding: 18px;
+      border-radius: 8px;
+      display: none;
+    }
+
+    .result strong {
+      font-size: 20px;
+    }
+
+    .info {
+      background: white;
+      margin-top: 22px;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    }
+
+    .info h2 {
+      font-size: 21px;
+      margin-top: 0;
+    }
+
+    .info h3 {
+      font-size: 18px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 30px;
+      background: #111827;
+      color: white;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 23px;
+      }
+
+      .tool-box,
+      .info {
+        padding: 17px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 4px 6px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Time Duration Calculator</h1>
+    <p>দুটি সময়ের মধ্যে কতক্ষণ ব্যবধান তা হিসাব করুন</p>
+  </header>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../index.html#tools">Tools</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#privacy">Privacy</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+
+  <main>
+
+    <section class="tool-box">
+      <h2>সময় হিসাব করুন</h2>
+
+      <div class="field">
+        <label for="startTime">শুরুর সময়</label>
+        <input type="time" id="startTime">
+      </div>
+
+      <div class="field">
+        <label for="endTime">শেষের সময়</label>
+        <input type="time" id="endTime">
+      </div>
+
+      <div class="buttons">
+        <button class="calculate" onclick="calculateDuration()">সময় হিসাব করুন</button>
+        <button class="clear" onclick="clearCalculator()">Clear</button>
+      </div>
+
+      <div class="result" id="result"></div>
+    </section>
+
+    <section class="info">
+      <h2>Time Duration Calculator কী?</h2>
+
+      <p>
+        Time Duration Calculator হলো দুটি সময়ের মধ্যে মোট কত ঘণ্টা ও মিনিট
+        পার্থক্য রয়েছে তা দ্রুত হিসাব করার একটি সহজ অনলাইন টুল।
+      </p>
+
+      <h3>কীভাবে ব্যবহার করবেন?</h3>
+
+      <p>
+        প্রথমে শুরুর সময় নির্বাচন করুন। এরপর শেষের সময় নির্বাচন করে
+        “সময় হিসাব করুন” বাটনে চাপ দিন। TooloZo স্বয়ংক্রিয়ভাবে সময়ের
+        ব্যবধান দেখাবে।
+      </p>
+
+      <h3>মধ্যরাত পার হলে কী হবে?</h3>
+
+      <p>
+        যদি শেষের সময় শুরুর সময়ের চেয়ে ছোট হয়, তাহলে ক্যালকুলেটর ধরে নেবে
+        যে সময়টি পরের দিনের। যেমন রাত ১০টা থেকে রাত ১টা পর্যন্ত সময়ের
+        ব্যবধান হবে ৩ ঘণ্টা।
+      </p>
+
+      <h3>এই টুল কোথায় কাজে লাগতে পারে?</h3>
+
+      <p>
+        কাজের সময়, পড়াশোনার সময়, ভ্রমণের সময়, ঘুমের সময়, মিটিং বা
+        কোনো কাজের শুরু ও শেষের সময়ের ব্যবধান বের করতে এই টুল ব্যবহার
+        করা যায়।
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 TooloZo Tools — Free Online Tools
+  </footer>
+
+  <script>
+    function calculateDuration() {
+      const start = document.getElementById("startTime").value;
+      const end = document.getElementById("endTime").value;
+      const result = document.getElementById("result");
+
+      if (!start || !end) {
+        result.style.display = "block";
+        result.innerHTML = "দয়া করে শুরুর সময় এবং শেষের সময় নির্বাচন করুন
