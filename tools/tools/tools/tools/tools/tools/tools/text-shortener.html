@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Text Shortener Online – নির্দিষ্ট Word Limit-এ লেখা ছোট করুন | TooloZo Tools</title>
+
+  <meta name="description" content="Text Shortener Online ব্যবহার করে লেখাকে নির্দিষ্ট Word Limit-এর মধ্যে ছোট করুন। সহজে Text Shorten, Copy এবং Clear করুন।">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://toolozo.github.io/toolozo-tools/tools/text-shortener.html">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      color: #222;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 22px 15px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      color: #d1d5db;
+    }
+
+    nav {
+      background: white;
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav a {
+      color: #111827;
+      text-decoration: none;
+      margin: 0 8px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 25px auto;
+      padding: 0 15px;
+    }
+
+    .tool-box,
+    .content-box {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 220px;
+      padding: 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      resize: vertical;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      border: none;
+      padding: 12px 18px;
+      margin: 5px 5px 5px 0;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .shorten-btn {
+      background: #111827;
+      color: white;
+    }
+
+    .copy-btn {
+      background: #2563eb;
+      color: white;
+    }
+
+    .clear-btn {
+      background: #e5e7eb;
+      color: #111827;
+    }
+
+    .result-info {
+      background: #f3f4f6;
+      padding: 10px 14px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    h2 {
+      color: #111827;
+      font-size: 23px;
+      margin-top: 0;
+    }
+
+    h3 {
+      color: #111827;
+      font-size: 19px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 23px;
+      }
+
+      .tool-box,
+      .content-box {
+        padding: 17px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 4px 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Text Shortener</h1>
+    <p>নির্দিষ্ট Word Limit-এর মধ্যে লেখা ছোট করুন</p>
+  </header>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../index.html#tools">Tools</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#privacy">Privacy</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+
+  <main class="container">
+
+    <section class="tool-box">
+
+      <h2>Text Shortener Online</h2>
+
+      <label for="inputText">আপনার লেখা দিন</label>
+
+      <textarea
+        id="inputText"
+        placeholder="এখানে আপনার লেখা Paste করুন..."
+      ></textarea>
+
+      <label for="wordLimit">কত Words-এর মধ্যে রাখতে চান?</label>
+
+      <input
+        type="number"
+        id="wordLimit"
+        min="1"
+        value="50"
+        placeholder="যেমন: 50"
+      >
+
+      <button class="shorten-btn" onclick="shortenText()">
+        Shorten Text
+      </button>
+
+      <button class="clear-btn" onclick="clearAll()">
+        Clear
+      </button>
+
+      <div class="result-info" id="resultInfo">
+        এখানে ফলাফল দেখা যাবে।
+      </div>
+
+      <label for="outputText">Shortened Text</label>
+
+      <textarea
+        id="outputText"
+        placeholder="Shortened text এখানে দেখা যাবে..."
+        readonly
+      ></textarea>
+
+      <button class="copy-btn" onclick="copyResult()">
+        Copy Result
+      </button>
+
+    </section>
+
+    <section class="content-box">
+
+      <h2>Text Shortener কী?</h2>
+
+      <p>
+        Text Shortener হলো এমন একটি সহজ অনলাইন টুল, যার মাধ্যমে একটি বড় লেখা
+        নির্দিষ্ট Word Limit-এর মধ্যে ছোট করা যায়। এটি বিশেষ করে Social Media,
+        Short Description, Notes এবং সীমিত Word-এর লেখার ক্ষেত্রে কাজে লাগতে পারে।
+      </p>
+
+      <h3>কীভাবে ব্যবহার করবেন?</h3>
+
+      <p>
+        প্রথমে উপরের Text Box-এ আপনার লেখা Paste করুন। এরপর আপনি সর্বোচ্চ কতটি
+        Word রাখতে চান তা লিখুন। তারপর <strong>Shorten Text</strong> বাটনে চাপ দিন।
+        টুলটি প্রথম দিকের নির্ধারিত সংখ্যক Word রেখে বাকি অংশ বাদ দেবে।
+      </p>
+
+      <h3>এই Text Shortener কীভাবে কাজ করে?</h3>
+
+      <p>
+        এই টুলটি AI দিয়ে লেখার সারাংশ তৈরি করে না। এটি আপনার নির্ধারিত Word Limit
+        অনুযায়ী লেখাকে ছোট করে। ফলে মূল লেখার সব তথ্য বা অর্থ একইভাবে সংরক্ষিত
+        থাকবে—এমন নিশ্চয়তা নেই।
+      </p>
+
+      <h3>কাদের জন্য উপকারী?</h3>
+
+      <p>
+        Blogger, Content Writer, Student, Social Media User এবং যারা নির্দিষ্ট
+        Word Limit-এর মধ্যে লেখা রাখতে চান, তাদের জন্য এই টুলটি ব্যবহার করা যেতে পারে।
+      </p>
+
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 TooloZo Tools — Free Online Tools
+  </footer>
+
+  <script>
+    function shortenText() {
+      const input = document.getElementById("inputText").value.trim();
+      const limit = parseInt(document.getElementById("wordLimit").value);
+      const output = document.getElementById("outputText");
+      const info = document.getElementById("resultInfo");
+
+      if (!input) {
+        output.value = "";
+        info.textContent = "দয়া করে আগে একটি লেখা দিন।";
+        return;
+      }
+
+      if (!limit || limit < 1) {
+        output.value = "";
+        info.textContent = "দয়া করে একটি সঠিক Word Limit দিন।";
+        return;
+      }
+
+      const words = input.split(/\s+/);
+
+      if (words.length <= limit) {
+        output.value = input;
+        info.textContent =
+          "আপনার লেখায় " + words.length +
+          "টি Word আছে। এটি ইতিমধ্যেই নির্ধারিত Limit-এর মধ্যে রয়েছে।";
+        return;
+      }
+
+      const shortened = words.slice(0, limit).join(" ") + "...";
+
+      output.value = shortened;
+
+      info.textContent =
+        "মূল লেখা: " + words.length +
+        " Words | Shortened লেখা: " + limit + " Words";
+    }
+
+    function copyResult() {
+      const output = document.getElementById("outputText");
+
+      if (!output.value) {
+        alert("কপি করার মতো কোনো ফলাফল নেই।");
+        return;
+      }
+
+      navigator.clipboard.writeText(output.value)
+        .then(function() {
+          alert("Result copied successfully!");
+        })
+        .catch(function() {
+          output.select();
+          document.execCommand("copy");
+          alert("Result copied successfully!");
+        });
+    }
+
+    function clearAll() {
+      document.getElementById("inputText").value = "";
+      document.getElementById("outputText").value = "";
+      document.getElementById("wordLimit").value = "50";
+      document.getElementById("resultInfo").textContent =
+        "এখানে ফলাফল দেখা যাবে।";
+    }
+  </script>
+
+</body>
+</html>
