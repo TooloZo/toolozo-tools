@@ -140,101 +140,54 @@ Simple and free tools for writing, names, text editing and everyday tasks.
 
 <div id="tools">
 
-<!-- Word Counter -->
-
 <div class="box">
 <h2>Word Counter</h2>
-
 <textarea id="words" placeholder="Type or paste text here"></textarea>
-
 <button onclick="wordCount()">Count Words</button>
-
-<div class="result" id="wordResult">
-Words: 0
+<div class="result" id="wordResult">Words: 0</div>
 </div>
-
-</div>
-
-
-<!-- Character Counter -->
 
 <div class="box">
 <h2>Character Counter</h2>
-
 <textarea id="chars" placeholder="Type or paste text here"></textarea>
-
 <button onclick="charCount()">Count Characters</button>
-
-<div class="result" id="charResult">
-Characters: 0
+<div class="result" id="charResult">Characters: 0</div>
 </div>
-
-</div>
-
-
-<!-- Text Case Converter -->
 
 <div class="box">
 <h2>Text Case Converter</h2>
-
 <textarea id="caseText" placeholder="Type or paste text here"></textarea>
-
 <button onclick="makeUpper()">UPPERCASE</button>
 <button onclick="makeLower()">lowercase</button>
-
-<div class="result" id="caseResult">
-Converted text will appear here.
+<div class="result" id="caseResult">Converted text will appear here.</div>
 </div>
-
-</div>
-
-
-<!-- Remove Extra Spaces -->
 
 <div class="box">
 <h2>Remove Extra Spaces</h2>
-
 <textarea id="spaceText" placeholder="Paste text with extra spaces"></textarea>
-
 <button onclick="cleanSpaces()">Clean Text</button>
-
-<div class="result" id="spaceResult">
-Cleaned text will appear here.
+<div class="result" id="spaceResult">Cleaned text will appear here.</div>
 </div>
-
-</div>
-
-
-<!-- Reading Time Calculator -->
 
 <div class="box">
 <h2>Reading Time Calculator</h2>
-
 <textarea id="readText" placeholder="Paste your article or text here"></textarea>
-
 <button onclick="readingTime()">Calculate Reading Time</button>
-
-<div class="result" id="readResult">
-Reading time will appear here.
+<div class="result" id="readResult">Reading time will appear here.</div>
 </div>
-
-</div>
-
-
-<!-- Name Meaning Finder -->
 
 <div class="box">
 
 <h2>আপনার নামের অর্থ কী?</h2>
 
 <p>
-আপনার নাম লিখুন এবং নামটির অর্থ জেনে নিন।
+আপনার নাম লিখুন এবং নামটির প্রচলিত অর্থ জেনে নিন।
 </p>
 
 <input
 type="text"
 id="nameInput"
-placeholder="যেমন: শুভ, মিম, Tanzin, Miki"
+placeholder="যেমন: সাদিয়া, মেহরিন, তাসিন, রাইয়ান, মেহমিত"
 >
 
 <button onclick="findNameMeaning()">
@@ -249,116 +202,75 @@ placeholder="যেমন: শুভ, মিম, Tanzin, Miki"
 
 </div>
 
-
-<!-- About -->
-
 <div class="box" id="about">
-
 <h2>About TooloZo Tools</h2>
-
 <p>
 TooloZo Tools is a free online tools website for simple writing,
 text, names and everyday tasks.
 </p>
-
 </div>
 
-
-<!-- Privacy -->
-
 <div class="box" id="privacy">
-
 <h2>Privacy Policy</h2>
-
 <p>
 TooloZo Tools provides browser-based tools.
 Text and names entered into the tools are processed in your browser
 for the requested task.
 </p>
-
 </div>
 
-
-<!-- Contact -->
-
 <div class="box" id="contact">
-
 <h2>Contact</h2>
-
 <p>
 For questions, suggestions or feedback about TooloZo Tools,
 please contact the website owner.
 </p>
-
 </div>
 
 </main>
 
-
 <footer>
-
 <p>© 2026 TooloZo Tools. All rights reserved.</p>
-
 </footer>
-
 
 <script>
 
-/* Word Counter */
-
 function wordCount(){
-
 var t=document.getElementById("words").value.trim();
 
 document.getElementById("wordResult").innerText=
 "Words: "+(t?t.split(/\s+/).length:0);
-
 }
 
 
-/* Character Counter */
-
 function charCount(){
-
 var t=document.getElementById("chars").value;
 
 document.getElementById("charResult").innerText=
 "Characters: "+t.length;
-
 }
 
-
-/* Text Case Converter */
 
 function makeUpper(){
-
 document.getElementById("caseResult").innerText=
 document.getElementById("caseText").value.toUpperCase();
-
 }
+
 
 function makeLower(){
-
 document.getElementById("caseResult").innerText=
 document.getElementById("caseText").value.toLowerCase();
-
 }
 
 
-/* Remove Extra Spaces */
-
 function cleanSpaces(){
-
 var t=document.getElementById("spaceText").value
 .replace(/\s+/g," ")
 .trim();
 
 document.getElementById("spaceResult").innerText=t;
-
 }
 
-
-/* Reading Time Calculator */
 
 function readingTime(){
 
@@ -371,11 +283,8 @@ var minutes=words?Math.ceil(words/200):0;
 document.getElementById("readResult").innerText=
 "Words: "+words+
 " | Reading time: "+minutes+" minute(s)";
-
 }
 
-
-/* Name Meaning Database */
 
 var nameData={
 
@@ -411,7 +320,7 @@ origin:"বাংলা"
 
 "piya":{
 meaning:"প্রিয়, ভালোবাসার মানুষ",
-origin:"বাংলা"
+origin:"প্রচলিত"
 },
 
 "জোনাকি":{
@@ -425,12 +334,12 @@ origin:"বাংলা"
 },
 
 "মিম":{
-meaning:"আরবি বর্ণমালার একটি অক্ষর; প্রচলিত আরবি নাম",
+meaning:"আরবি বর্ণমালার একটি অক্ষরের নাম",
 origin:"আরবি"
 },
 
 "mim":{
-meaning:"আরবি বর্ণমালার একটি অক্ষর; প্রচলিত আরবি নাম",
+meaning:"আরবি বর্ণমালার একটি অক্ষরের নাম",
 origin:"আরবি"
 },
 
@@ -599,11 +508,6 @@ meaning:"আনন্দময় বা আনন্দের সঙ্গে �
 origin:"প্রচলিত"
 },
 
-"রনি":{
-meaning:"আনন্দময় বা আনন্দের সঙ্গে সম্পর্কিত প্রচলিত নাম",
-origin:"প্রচলিত"
-},
-
 "rony":{
 meaning:"আনন্দময় বা আনন্দের সঙ্গে সম্পর্কিত প্রচলিত নাম",
 origin:"প্রচলিত"
@@ -680,60 +584,197 @@ origin:"বাংলা"
 },
 
 "রিয়া":{
-meaning:"গান, সৌন্দর্য বা আনন্দের সঙ্গে সম্পর্কিত প্রচলিত নাম",
+meaning:"গান, সৌন্দর্য বা আনন্দের সঙ্গে সম্পর্কিত নাম হিসেবে প্রচলিত",
 origin:"প্রচলিত"
 },
 
 "রিয়া":{
-meaning:"গান, সৌন্দর্য বা আনন্দের সঙ্গে সম্পর্কিত প্রচলিত নাম",
+meaning:"গান, সৌন্দর্য বা আনন্দের সঙ্গে সম্পর্কিত নাম হিসেবে প্রচলিত",
 origin:"প্রচলিত"
 },
 
 "riya":{
-meaning:"গান, সৌন্দর্য বা আনন্দের সঙ্গে সম্পর্কিত প্রচলিত নাম",
+meaning:"গান, সৌন্দর্য বা আনন্দের সঙ্গে সম্পর্কিত নাম হিসেবে প্রচলিত",
 origin:"প্রচলিত"
 },
 
-/* তাজরিন এবং Tanzin */
-
 "তাজরিন":{
-meaning:"উজ্জ্বল, দীপ্তিময়; প্রচলিত আধুনিক নাম",
+meaning:"প্রচলিত আধুনিক নাম",
 origin:"প্রচলিত"
 },
 
 "tanzin":{
-meaning:"সুশৃঙ্খল, সুন্দরভাবে সাজানো বা বিন্যস্ত",
+meaning:"শৃঙ্খলা, বিন্যাস বা সুন্দরভাবে সাজানোর সঙ্গে সম্পর্কিত প্রচলিত অর্থ",
 origin:"আরবি/প্রচলিত"
 },
 
-/* তাজরিন সুলতানা - আলাদা পূর্ণ নাম */
-
 "তাজরিন সুলতানা":{
-meaning:"তাজরিন — উজ্জ্বল বা দীপ্তিময়; সুলতানা — রাণী বা নারী শাসক",
+meaning:"তাজরিন — প্রচলিত আধুনিক নাম; সুলতানা — রাণী বা নারী শাসক",
 origin:"আরবি/প্রচলিত"
 },
 
 "tanzin sultana":{
-meaning:"Tanzin — সুশৃঙ্খল বা সুন্দরভাবে বিন্যস্ত; Sultana — রাণী বা নারী শাসক",
+meaning:"Tanzin — শৃঙ্খলা বা সুন্দর বিন্যাসের সঙ্গে সম্পর্কিত প্রচলিত অর্থ; Sultana — রাণী বা নারী শাসক",
 origin:"আরবি/প্রচলিত"
 },
 
-/* মিকি - আলাদা নাম */
+"সাজিন":{
+meaning:"প্রচলিত আধুনিক নাম; এর অর্থের বিভিন্ন ব্যাখ্যা পাওয়া যায়",
+origin:"প্রচলিত"
+},
+
+"sajin":{
+meaning:"প্রচলিত আধুনিক নাম; এর অর্থের বিভিন্ন ব্যাখ্যা পাওয়া যায়",
+origin:"প্রচলিত"
+},
+
+"ইমরান হুসেন":{
+meaning:"ইমরান — সমৃদ্ধি বা দীর্ঘস্থায়ী উন্নতির সঙ্গে সম্পর্কিত; হুসেন — সুন্দর, উত্তম",
+origin:"আরবি"
+},
+
+"imran hussain":{
+meaning:"Imran — সমৃদ্ধি বা উন্নতির সঙ্গে সম্পর্কিত; Hussain — সুন্দর, উত্তম",
+origin:"আরবি"
+},
+
+"imran hosen":{
+meaning:"Imran — সমৃদ্ধি বা উন্নতির সঙ্গে সম্পর্কিত; Hosen — সুন্দর, উত্তম",
+origin:"আরবি"
+},
+
+"রৈদুল":{
+meaning:"প্রচলিত আধুনিক নাম; অর্থের বিভিন্ন ব্যাখ্যা প্রচলিত",
+origin:"প্রচলিত"
+},
+
+"raidul":{
+meaning:"প্রচলিত আধুনিক নাম; অর্থের বিভিন্ন ব্যাখ্যা প্রচলিত",
+origin:"প্রচলিত"
+},
 
 "মিকি":{
-meaning:"Miki একটি প্রচলিত আন্তর্জাতিক নাম; বিভিন্ন ভাষা ও সংস্কৃতিতে এর আলাদা আলাদা অর্থ ও ব্যবহার রয়েছে",
+meaning:"Miki একটি আন্তর্জাতিকভাবে ব্যবহৃত নাম; বিভিন্ন ভাষা ও সংস্কৃতিতে এর ভিন্ন অর্থ থাকতে পারে",
 origin:"বহু সংস্কৃতিতে প্রচলিত"
 },
 
 "miki":{
-meaning:"Miki একটি প্রচলিত আন্তর্জাতিক নাম; বিভিন্ন ভাষা ও সংস্কৃতিতে এর আলাদা আলাদা অর্থ ও ব্যবহার রয়েছে",
+meaning:"Miki একটি আন্তর্জাতিকভাবে ব্যবহৃত নাম; বিভিন্ন ভাষা ও সংস্কৃতিতে এর ভিন্ন অর্থ থাকতে পারে",
 origin:"বহু সংস্কৃতিতে প্রচলিত"
+},
+
+"সাদিয়া":{
+meaning:"সৌভাগ্যবতী, সুখী",
+origin:"আরবি"
+},
+
+"sadia":{
+meaning:"সৌভাগ্যবতী, সুখী",
+origin:"আরবি"
+},
+
+"শাফিন":{
+meaning:"প্রচলিত মুসলিম নাম; নামটির অর্থের বিভিন্ন ব্যাখ্যা পাওয়া যায়",
+origin:"আরবি/প্রচলিত"
+},
+
+"shafin":{
+meaning:"প্রচলিত মুসলিম নাম; নামটির অর্থের বিভিন্ন ব্যাখ্যা পাওয়া যায়",
+origin:"আরবি/প্রচলিত"
+},
+
+"তাসিন":{
+meaning:"প্রচলিত মুসলিম নাম; তাসিন নামটি আরবি-ইসলামি নাম হিসেবে ব্যবহৃত হয়",
+origin:"আরবি/ইসলামি"
+},
+
+"tasin":{
+meaning:"প্রচলিত মুসলিম নাম; তাসিন নামটি আরবি-ইসলামি নাম হিসেবে ব্যবহৃত হয়",
+origin:"আরবি/ইসলামি"
+},
+
+"রাইয়ান":{
+meaning:"সতেজ, পরিতৃপ্ত; ইসলামী ঐতিহ্যে জান্নাতের একটি দরজার নাম",
+origin:"আরবি/ইসলামি"
+},
+
+"রাইয়ান":{
+meaning:"সতেজ, পরিতৃপ্ত; ইসলামী ঐতিহ্যে জান্নাতের একটি দরজার নাম",
+origin:"আরবি/ইসলামি"
+},
+
+"raiyaan":{
+meaning:"সতেজ, পরিতৃপ্ত; ইসলামী ঐতিহ্যে জান্নাতের একটি দরজার নাম",
+origin:"আরবি/ইসলামি"
+},
+
+"rayyan":{
+meaning:"সতেজ, পরিতৃপ্ত; ইসলামী ঐতিহ্যে জান্নাতের একটি দরজার নাম",
+origin:"আরবি/ইসলামি"
+},
+
+"ফাহমিদ":{
+meaning:"বুদ্ধিমান, বোঝার ক্ষমতাসম্পন্ন",
+origin:"আরবি/প্রচলিত"
+},
+
+"fahmid":{
+meaning:"বুদ্ধিমান, বোঝার ক্ষমতাসম্পন্ন",
+origin:"আরবি/প্রচলিত"
+},
+
+"মেহরিন":{
+meaning:"স্নেহময়, মমতাময়; প্রচলিত ফারসি নাম",
+origin:"ফারসি/প্রচলিত"
+},
+
+"mehrin":{
+meaning:"স্নেহময়, মমতাময়; প্রচলিত ফারসি নাম",
+origin:"ফারসি/প্রচলিত"
+},
+
+"তুবা":{
+meaning:"সুখ, কল্যাণ, মঙ্গল; ইসলামী ঐতিহ্যে জান্নাতের সঙ্গে সম্পর্কিত নাম",
+origin:"আরবি/ইসলামি"
+},
+
+"tuba":{
+meaning:"সুখ, কল্যাণ, মঙ্গল; ইসলামী ঐতিহ্যে জান্নাতের সঙ্গে সম্পর্কিত নাম",
+origin:"আরবি/ইসলামি"
+},
+
+"নাহিদ":{
+meaning:"শুক্রগ্রহ/উজ্জ্বল নক্ষত্র; ফারসি নাম হিসেবে প্রচলিত",
+origin:"ফারসি"
+},
+
+"nahid":{
+meaning:"শুক্রগ্রহ/উজ্জ্বল নক্ষত্র; ফারসি নাম হিসেবে প্রচলিত",
+origin:"ফারসি"
+},
+
+"আসিফ":{
+meaning:"শক্তিশালী, যোগ্য; প্রচলিত আরবি নাম",
+origin:"আরবি/প্রচলিত"
+},
+
+"asif":{
+meaning:"শক্তিশালী, যোগ্য; প্রচলিত আরবি নাম",
+origin:"আরবি/প্রচলিত"
+},
+
+"মেহমিত":{
+meaning:"প্রচলিত আধুনিক নাম; বানান ও উৎসভেদে অর্থের ভিন্ন ব্যাখ্যা থাকতে পারে",
+origin:"প্রচলিত"
+},
+
+"mehmit":{
+meaning:"প্রচলিত আধুনিক নাম; বানান ও উৎসভেদে অর্থের ভিন্ন ব্যাখ্যা থাকতে পারে",
+origin:"প্রচলিত"
 }
 
 };
 
-
-/* Name Meaning Finder */
 
 function findNameMeaning(){
 
@@ -768,14 +809,12 @@ result.innerHTML=
 "<strong>নাম:</strong> "+name+
 "<br><br>"+
 "এই নামটির তথ্য এখনো আমাদের তালিকায় নেই।"+
-"<br>শিগগিরই আরও নাম যোগ করা হবে।";
+"<br>আরও নাম ধীরে ধীরে যোগ করা হবে।";
 
 }
 
 }
 
-
-/* Share Name Meaning */
 
 function shareName(){
 
