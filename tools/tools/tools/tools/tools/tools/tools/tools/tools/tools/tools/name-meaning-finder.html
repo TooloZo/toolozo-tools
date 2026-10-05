@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Name Meaning Finder – নামের অর্থ জানুন | TooloZo Tools</title>
+
+  <meta name="description" content="Name Meaning Finder দিয়ে বাংলা ও ইংরেজি নামের অর্থ, নামের উৎস ও সংক্ষিপ্ত পরিচিতি জানুন। ছেলে ও মেয়েদের জনপ্রিয় নামের অর্থ খুঁজে দেখুন।">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://toolozo.github.io/toolozo-tools/tools/name-meaning-finder.html">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      color: #222;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 24px 15px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    header p {
+      margin: 6px 0 0;
+      color: #d1d5db;
+    }
+
+    nav {
+      background: white;
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav a {
+      color: #111827;
+      text-decoration: none;
+      margin: 0 8px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 25px auto;
+      padding: 0 15px;
+    }
+
+    .tool-box,
+    .content-box {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      margin-bottom: 20px;
+    }
+
+    .search-area {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .search-area input {
+      flex: 1;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      border: none;
+      padding: 12px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .search-btn {
+      background: #111827;
+      color: white;
+      white-space: nowrap;
+    }
+
+    .copy-btn {
+      background: #2563eb;
+      color: white;
+      margin-top: 15px;
+    }
+
+    .clear-btn {
+      background: #e5e7eb;
+      color: #111827;
+      margin-top: 15px;
+      margin-left: 5px;
+    }
+
+    .example {
+      background: #f3f4f6;
+      padding: 12px 14px;
+      border-radius: 8px;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .result {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      background: #f3f4f6;
+    }
+
+    .result h3 {
+      margin-top: 0;
+      font-size: 24px;
+      color: #111827;
+    }
+
+    .result-item {
+      margin: 10px 0;
+    }
+
+    .result-label {
+      font-weight: bold;
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    .not-found {
+      background: #fff7ed;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      display: none;
+    }
+
+    h2 {
+      color: #111827;
+      font-size: 23px;
+      margin-top: 0;
+    }
+
+    h3 {
+      color: #111827;
+      font-size: 19px;
+    }
+
+    .name-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .name-tag {
+      background: #f3f4f6;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+
+      header h1 {
+        font-size: 23px;
+      }
+
+      .tool-box,
+      .content-box {
+        padding: 17px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 4px 5px;
+      }
+
+      .search-area {
+        flex-direction: column;
+      }
+
+      .search-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>আপনার নামের অর্থ কী?</h1>
+    <p>Name Meaning Finder – নামের অর্থ ও উৎস খুঁজে দেখুন</p>
+  </header>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../index.html#tools">Tools</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#privacy">Privacy</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+
+  <main class="container">
+
+    <section class="tool-box">
+
+      <h2>আপনার নামের অর্থ কী?</h2>
+
+      <p>
+        নিচে আপনার নাম লিখে অর্থ ও নামের উৎস খুঁজে দেখুন।
+      </p>
+
+      <div class="search-area">
+
+        <input
+          type="text"
+          id="nameInput"
+          placeholder="যেমন: সাদিয়া, মেহরিন, তুবা, শাফিন, তাসিন, রাইয়ান, ফাহমিদ"
+          onkeydown="handleEnter(event)"
+        >
+
+        <button class="search-btn" onclick="findMeaning()">
+          খুঁজুন
+        </button>
+
+      </div>
+
+      <div class="example">
+        <strong>উদাহরণ:</strong>
+        সাদিয়া, মেহরিন, তুবা, শাফিন, তাসিন, রাইয়ান, ফাহমিদ
+      </div>
+
+      <div class="result" id="result">
+
+        <h3 id="resultName"></h3>
+
+        <div class="result-item">
+          <span class="result-label">অর্থ:</span>
+          <span id="resultMeaning"></span>
+        </div>
+
+        <div class="result-item">
+          <span class="result-label">উৎস:</span>
+          <span id="resultOrigin"></span>
+        </div>
+
+        <button class="copy-btn" onclick="copyMeaning()">
+          অর্থ Copy করুন
+        </button>
+
+        <button class="clear-btn" onclick="clearSearch()">
+          Clear
+        </button>
+
+      </div>
+
+      <div class="not-found" id="notFound">
+        এই নামটি বর্তমানে আমাদের তালিকায় পাওয়া যায়নি।
+        অন্য একটি নাম দিয়ে চেষ্টা করুন।
+      </div>
+
+    </section>
+
+    <section class="content-box">
+
+      <h2>নামের অর্থ জানা কেন গুরুত্বপূর্ণ?</h2>
+
+      <p>
+        একটি নাম শুধু পরিচয়ের জন্য নয়, অনেক সময় তার সঙ্গে অর্থ, সংস্কৃতি,
+        পারিবারিক পছন্দ এবং ঐতিহ্যও জড়িয়ে থাকে। বিশেষ করে শিশুর নাম রাখার
+        সময় অনেকেই নামের সুন্দর অর্থ ও উৎস জানতে চান।
+      </p>
+
+      <h3>কী ধরনের নাম খুঁজে পাবেন?</h3>
+
+      <p>
+        TooloZo Name Meaning Finder-এ ধীরে ধীরে মুসলিম, হিন্দু, বাংলা,
+        আধুনিক, প্রচলিত এবং বিভিন্ন ধরনের ছেলে ও মেয়েদের নামের একটি বড়
+        তালিকা যুক্ত করা হবে।
+      </p>
+
+      <h3>জনপ্রিয় কিছু নাম</h3>
+
+      <div class="name-list">
+        <span class="name-tag">সাদিয়া</span>
+        <span class="name-tag">মেহরিন</span>
+        <span class="name-tag">তুবা</span>
+        <span class="name-tag">শাফিন</span>
+        <span class="name-tag">তাসিন</span>
+        <span class="name-tag">রাইয়ান</span>
+        <span class="name-tag">ফাহমিদ</span>
+        <span class="name-tag">তাজরিন</span>
+        <span class="name-tag">মিকি</span>
+      </div>
+
+      <h3>নাম খুঁজে পাওয়ার টিপস</h3>
+
+      <p>
+        বাংলা বা ইংরেজি—দুইভাবেই নাম লিখে চেষ্টা করতে পারেন। যেমন
+        “রাইয়ান” অথবা “Rayyan” লিখলে একই নামের তথ্য পাওয়া যেতে পারে।
+      </p>
+
+      <p>
+        এই তালিকাটি সময়ের সঙ্গে আরও বড় করা হবে, যাতে বিভিন্ন ধরনের
+        নামের অর্থ সহজে খুঁজে পাওয়া যায়।
+      </p>
+
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 TooloZo Tools — Free Online Tools
+  </footer>
+
+  <script>
+
+    const nameData = {
+
+      "সাদিয়া": {
+        meaning: "সৌভাগ্যবতী, সুখী ও আনন্দময়",
+        origin: "আরবি"
+      },
+
+      "sadia": {
+        meaning: "সৌভাগ্যবতী, সুখী ও আনন্দময়",
+        origin: "আরবি"
+      },
+
+      "মেহরিন": {
+        meaning: "স্নেহময়, মমতাময়",
+        origin: "ফারসি"
+      },
+
+      "mehrin": {
+        meaning: "স্নেহময়, মমতাময়",
+        origin: "ফারসি"
+      },
+
+      "তুবা": {
+        meaning: "সুখ, কল্যাণ ও মঙ্গল; ইসলামী ঐতিহ্যে জান্নাতের সঙ্গে সম্পর্কিত নাম",
+        origin: "আরবি"
+      },
+
+      "tuba": {
+        meaning: "সুখ, কল্যাণ ও মঙ্গল; ইসলামী ঐতিহ্যে জান্নাতের সঙ্গে সম্পর্কিত নাম",
+        origin: "আরবি"
+      },
+
+      "শাফিন": {
+        meaning: "আরোগ্যকারী বা নিরাময়কারী",
+        origin: "আরবি"
+      },
+
+      "shafin": {
+        meaning: "আরোগ্যকারী বা নিরাময়কারী",
+        origin: "আরবি"
+      },
+
+      "তাসিন": {
+        meaning: "প্রচলিত মুসলিম নাম; ইসলামী ঐতিহ্যে ব্যবহৃত একটি নাম",
+        origin: "আরবি/ইসলামি"
+      },
+
+      "tasin": {
+        meaning: "প্রচলিত মুসলিম নাম; ইসলামী ঐতিহ্যে ব্যবহৃত একটি নাম",
+        origin: "আরবি/ইসলামি"
+      },
+
+      "রাইয়ান": {
+        meaning: "সতেজ, পরিতৃপ্ত; ইসলামী ঐতিহ্যে জান্নাতের একটি দরজার নাম",
+        origin: "আরবি"
+      },
+
+      "রাইয়ান": {
+        meaning: "সতেজ, পরিতৃপ্ত; ইসলামী ঐতিহ্যে জান্নাতের একটি দরজার নাম",
+        origin: "আরবি"
+      },
+
+      "rayyan": {
+        meaning: "সতেজ, পরিতৃপ্ত; ইসলামী ঐতিহ্যে জান্নাতের একটি দরজার নাম",
+        origin: "আরবি"
+      },
+
+      "raiyan": {
+        meaning: "সতেজ, পরিতৃপ্ত; ইসলামী ঐতিহ্যে জান্নাতের একটি দরজার নাম",
+        origin: "আরবি"
+      },
+
+      "ফাহমিদ": {
+        meaning: "বুদ্ধিমান, জ্ঞানী ও বোঝার ক্ষমতাসম্পন্ন",
+        origin: "আরবি/ফারসি ব্যবহারে প্রচলিত"
+      },
+
+      "fahmid": {
+        meaning: "বুদ্ধিমান, জ্ঞানী ও বোঝার ক্ষমতাসম্পন্ন",
+        origin: "আরবি/ফারসি ব্যবহারে প্রচলিত"
+      },
+
+      "তাজরিন": {
+        meaning: "প্রচলিত আধুনিক নাম",
+        origin: "আধুনিক ব্যবহারে প্রচলিত"
+      },
+
+      "tanzin": {
+        meaning: "প্রচলিত আধুনিক নাম",
+        origin: "আধুনিক ব্যবহারে প্রচলিত"
+      },
+
+      "তাজরিন সুলতানা": {
+        meaning: "তাজরিন নামের সঙ্গে সুলতানা যুক্ত একটি পূর্ণ নাম",
+        origin: "বাংলাদেশে প্রচলিত
