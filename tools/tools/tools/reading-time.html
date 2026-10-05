@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Reading Time Calculator – লেখা পড়তে কত সময় লাগবে | TooloZo Tools</title>
+
+  <meta name="description" content="Reading Time Calculator দিয়ে বাংলা বা ইংরেজি লেখা পড়তে আনুমানিক কত মিনিট সময় লাগবে তা সহজেই হিসাব করুন। ফ্রি অনলাইন Reading Time Tool।">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://toolozo.github.io/toolozo-tools/tools/reading-time.html">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 24px 15px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    header p {
+      margin: 6px 0 0;
+      color: #d1d5db;
+      font-size: 15px;
+    }
+
+    nav {
+      background: white;
+      border-bottom: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #111827;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 850px;
+      margin: 25px auto;
+      padding: 0 15px;
+    }
+
+    .tool-box {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    }
+
+    .tool-box h2 {
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 260px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      resize: vertical;
+      outline: none;
+    }
+
+    textarea:focus {
+      border-color: #555;
+    }
+
+    .result {
+      margin-top: 15px;
+      padding: 18px;
+      background: #f3f4f6;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .result strong {
+      display: block;
+      font-size: 28px;
+      margin-bottom: 4px;
+    }
+
+    .result span {
+      color: #555;
+      font-size: 14px;
+    }
+
+    .clear-btn {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 7px;
+      background: #111827;
+      color: white;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .clear-btn:hover {
+      opacity: 0.9;
+    }
+
+    .content {
+      background: white;
+      margin-top: 20px;
+      padding: 22px;
+      border-radius: 12px;
+    }
+
+    .content h2 {
+      font-size: 22px;
+      margin-top: 0;
+    }
+
+    .content h3 {
+      font-size: 18px;
+      margin-top: 22px;
+    }
+
+    footer {
+      margin-top: 30px;
+      padding: 22px 15px;
+      text-align: center;
+      background: #111827;
+      color: #ddd;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 25px;
+      }
+
+      .tool-box,
+      .content {
+        padding: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Reading Time Calculator</h1>
+    <p>আপনার লেখা পড়তে আনুমানিক কত সময় লাগবে জানুন</p>
+  </header>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../index.html#tools">Tools</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#privacy">Privacy</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+
+  <main>
+
+    <section class="tool-box">
+
+      <h2>Reading Time Calculator</h2>
+
+      <p>
+        নিচের বক্সে আপনার লেখা লিখুন বা Paste করুন।
+        TooloZo আপনার লেখার Word সংখ্যা হিসাব করে
+        আনুমানিক পড়ার সময় দেখাবে।
+      </p>
+
+      <textarea
+        id="textInput"
+        placeholder="এখানে আপনার লেখা লিখুন..."
+      ></textarea>
+
+      <div class="result">
+        <strong id="readingTime">0 মিনিট</strong>
+        <span id="wordCount">0 Words</span>
+      </div>
+
+      <button class="clear-btn" onclick="clearText()">Clear</button>
+
+    </section>
+
+    <section class="content">
+
+      <h2>Reading Time Calculator কী?</h2>
+
+      <p>
+        Reading Time Calculator এমন একটি অনলাইন টুল, যার মাধ্যমে
+        কোনো লেখা পড়তে আনুমানিক কত সময় লাগতে পারে তা হিসাব করা যায়।
+        লেখার মোট Word সংখ্যা এবং সাধারণ পড়ার গতির ভিত্তিতে সময়
+        হিসাব করা হয়।
+      </p>
+
+      <h3>কার জন্য Reading Time Calculator দরকার?</h3>
+
+      <p>
+        Blog Writer, Content Writer, Student এবং Website Publisher-রা
+        এই টুল ব্যবহার করে একটি লেখা পড়তে পাঠকের আনুমানিক কত সময়
+        লাগতে পারে তা জানতে পারেন।
+      </p>
+
+      <h3>কীভাবে Reading Time হিসাব করবেন?</h3>
+
+      <p>
+        আপনার লেখাটি উপরের Text Box-এ লিখুন অথবা Copy করে Paste করুন।
+        লেখা দেওয়ার সঙ্গে সঙ্গে মোট Word সংখ্যা এবং আনুমানিক Reading
+        Time দেখতে পাবেন।
+      </p>
+
+      <h3>Reading Time কীভাবে হিসাব করা হয়?</h3>
+
+      <p>
+        সাধারণ মানুষের গড় পড়ার গতিকে ভিত্তি ধরে লেখার Word সংখ্যা
+        থেকে আনুমানিক সময় হিসাব করা হয়। মানুষের পড়ার গতি একেকজনের
+        ক্ষেত্রে আলাদা হওয়ায় ফলাফলটি আনুমানিক।
+      </p>
+
+      <h3>বাংলা লেখার Reading Time হিসাব করা যাবে?</h3>
+
+      <p>
+        হ্যাঁ। বাংলা লেখাও এই টুলে Paste করে আনুমানিক পড়ার সময়
+        জানতে পারবেন।
+      </p>
+
+      <h3>এই Reading Time Calculator কি ফ্রি?</h3>
+
+      <p>
+        হ্যাঁ। TooloZo-এর এই অনলাইন Reading Time Calculator
+        বিনামূল্যে ব্যবহার করা যায়। কোনো সফটওয়্যার Install করার
+        প্রয়োজন নেই।
+      </p>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    <div>
+      © 2026 TooloZo Tools
+    </div>
+
+    <div style="margin-top: 8px;">
+      <a href="../index.html">Home</a> |
+      <a href="../index.html#about">About</a> |
+      <a href="../index.html#privacy">Privacy</a> |
+      <a href="../index.html#contact">Contact</a>
+    </div>
+
+  </footer>
+
+  <script>
+
+    const textInput = document.getElementById("textInput");
+    const readingTime = document.getElementById("readingTime");
+    const wordCount = document.getElementById("wordCount");
+
+    textInput.addEventListener("input", calculateReadingTime);
+
+    function calculateReadingTime() {
+
+      const text = textInput.value.trim();
+
+      let words = 0;
+
+      if (text.length > 0) {
+        words = text.split(/\s+/).length;
+      }
+
+      /*
+        আনুমানিক গড় পড়ার গতি:
+        প্রতি মিনিটে 200 Word
+      */
+      const wordsPerMinute = 200;
+
+      const minutes = words / wordsPerMinute;
+
+      let displayTime = "0 মিনিট";
+
+      if (words > 0 && minutes < 1) {
+        displayTime = "১ মিনিটের কম";
+      } else if (minutes >= 1) {
+        displayTime = Math.ceil(minutes) + " মিনিট";
+      }
+
+      readingTime.textContent = displayTime;
+      wordCount.textContent = words + " Words";
+    }
+
+    function clearText() {
+
+      textInput.value = "";
+
+      calculateReadingTime();
+
+      textInput.focus();
+    }
+
+  </script>
+
+</body>
+</html>
