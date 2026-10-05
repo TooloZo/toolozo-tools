@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Text Case Converter Online – বড় হাতের ও ছোট হাতের অক্ষর | TooloZo Tools</title>
+
+  <meta name="description" content="Text Case Converter দিয়ে ইংরেজি লেখাকে UPPERCASE, lowercase এবং Title Case-এ পরিবর্তন করুন। সহজ ও ফ্রি অনলাইন Text Case Converter Tool।">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://toolozo.github.io/toolozo-tools/tools/text-case-converter.html">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 24px 15px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    header p {
+      margin: 6px 0 0;
+      color: #d1d5db;
+      font-size: 15px;
+    }
+
+    nav {
+      background: white;
+      border-bottom: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #111827;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 25px auto;
+      padding: 0 15px;
+    }
+
+    .tool-box {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    }
+
+    .tool-box h2 {
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 240px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      resize: vertical;
+      outline: none;
+      line-height: 1.6;
+    }
+
+    textarea:focus {
+      border-color: #555;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    button {
+      padding: 10px 17px;
+      border: none;
+      border-radius: 7px;
+      background: #111827;
+      color: white;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .content {
+      background: white;
+      margin-top: 20px;
+      padding: 22px;
+      border-radius: 12px;
+    }
+
+    .content h2 {
+      font-size: 22px;
+      margin-top: 0;
+    }
+
+    .content h3 {
+      font-size: 18px;
+      margin-top: 22px;
+    }
+
+    footer {
+      margin-top: 30px;
+      padding: 22px 15px;
+      text-align: center;
+      background: #111827;
+      color: #ddd;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 25px;
+      }
+
+      .tool-box,
+      .content {
+        padding: 17px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Text Case Converter</h1>
+    <p>ইংরেজি লেখার বড় হাতের ও ছোট হাতের অক্ষর পরিবর্তন করুন</p>
+  </header>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../index.html#tools">Tools</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#privacy">Privacy</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+
+  <main>
+
+    <section class="tool-box">
+
+      <h2>Text Case Converter</h2>
+
+      <p>
+        নিচের বক্সে আপনার ইংরেজি লেখা লিখুন বা Paste করুন।
+        এরপর প্রয়োজন অনুযায়ী UPPERCASE, lowercase বা Title Case
+        নির্বাচন করুন।
+      </p>
+
+      <textarea
+        id="textInput"
+        placeholder="এখানে আপনার ইংরেজি লেখা লিখুন..."
+      ></textarea>
+
+      <div class="buttons">
+
+        <button onclick="convertUppercase()">
+          UPPERCASE
+        </button>
+
+        <button onclick="convertLowercase()">
+          lowercase
+        </button>
+
+        <button onclick="convertTitleCase()">
+          Title Case
+        </button>
+
+        <button onclick="copyText()">
+          Copy
+        </button>
+
+        <button onclick="clearText()">
+          Clear
+        </button>
+
+      </div>
+
+    </section>
+
+    <section class="content">
+
+      <h2>Text Case Converter কী?</h2>
+
+      <p>
+        Text Case Converter হলো এমন একটি অনলাইন টুল, যার মাধ্যমে
+        ইংরেজি লেখার অক্ষরের Case সহজেই পরিবর্তন করা যায়। একটি
+        লেখাকে বড় হাতের অক্ষর, ছোট হাতের অক্ষর অথবা Title Case-এ
+        পরিবর্তন করতে এই টুল ব্যবহার করা যায়।
+      </p>
+
+      <h3>UPPERCASE কী?</h3>
+
+      <p>
+        UPPERCASE করলে ইংরেজি লেখার ছোট হাতের অক্ষরগুলো বড় হাতের
+        অক্ষরে পরিবর্তিত হয়। যেমন: hello world থেকে HELLO WORLD।
+      </p>
+
+      <h3>lowercase কী?</h3>
+
+      <p>
+        lowercase করলে ইংরেজি লেখার বড় হাতের অক্ষরগুলো ছোট হাতের
+        অক্ষরে পরিবর্তিত হয়। যেমন: HELLO WORLD থেকে hello world।
+      </p>
+
+      <h3>Title Case কী?</h3>
+
+      <p>
+        Title Case সাধারণত কোনো Title বা Heading-এর প্রতিটি শব্দের
+        প্রথম অক্ষর বড় করার জন্য ব্যবহার করা হয়।
+      </p>
+
+      <h3>কীভাবে ব্যবহার করবেন?</h3>
+
+      <p>
+        প্রথমে আপনার ইংরেজি লেখাটি Text Box-এ Paste করুন। এরপর
+        প্রয়োজন অনুযায়ী UPPERCASE, lowercase অথবা Title Case
+        বাটনে চাপ দিন। চাইলে পরিবর্তিত লেখাটি Copy করে অন্য জায়গায়
+        ব্যবহার করতে পারবেন।
+      </p>
+
+      <h3>এই Text Case Converter কি ফ্রি?</h3>
+
+      <p>
+        হ্যাঁ। TooloZo-এর Text Case Converter অনলাইনে বিনামূল্যে
+        ব্যবহার করা যায়। কোনো সফটওয়্যার Install করার প্রয়োজন নেই।
+      </p>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    <div>
+      © 2026 TooloZo Tools
+    </div>
+
+    <div style="margin-top: 8px;">
+      <a href="../index.html">Home</a> |
+      <a href="../index.html#about">About</a> |
+      <a href="../index.html#privacy">Privacy</a> |
+      <a href="../index.html#contact">Contact</a>
+    </div>
+
+  </footer>
+
+  <script>
+
+    const textInput = document.getElementById("textInput");
+
+    function convertUppercase() {
+      textInput.value = textInput.value.toUpperCase();
+    }
+
+    function convertLowercase() {
+      textInput.value = textInput.value.toLowerCase();
+    }
+
+    function convertTitleCase() {
+
+      textInput.value = textInput.value
+        .toLowerCase()
+        .replace(/\b\w/g, function(letter) {
+          return letter.toUpperCase();
+        });
+    }
+
+    function copyText() {
+
+      if (!textInput.value) {
+        return;
+      }
+
+      navigator.clipboard.writeText(textInput.value)
+        .then(function() {
+          alert("লেখাটি Copy হয়েছে।");
+        })
+        .catch(function() {
+          textInput.select();
+          document.execCommand("copy");
+          alert("লেখাটি Copy হয়েছে।");
+        });
+    }
+
+    function clearText() {
+      textInput.value = "";
+      textInput.focus();
+    }
+
+  </script>
+
+</body>
+</html>
