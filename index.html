@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free online tools for text, SEO and everyday tasks.">
+  <title>Free Online Tools - Text, SEO & Everyday Tasks</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #222;
+    }
+
+    header {
+      background: #1f2937;
+      color: white;
+      text-align: center;
+      padding: 30px 15px;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+      font-size: 30px;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 16px;
+      color: #d1d5db;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 15px;
+    }
+
+    .intro {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+
+    .tools {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .tool-card {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+
+    .tool-card h2 {
+      margin-top: 0;
+      font-size: 21px;
+    }
+
+    textarea,
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    button {
+      margin-top: 12px;
+      padding: 11px 18px;
+      border: none;
+      border-radius: 8px;
+      background: #2563eb;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .result {
+      margin-top: 12px;
+      padding: 12px;
+      background: #f3f4f6;
+      border-radius: 8px;
+      min-height: 40px;
+      word-break: break-word;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 40px;
+      background: #1f2937;
+      color: #d1d5db;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Free Online Tools</h1>
+    <p>Simple tools for text, SEO and everyday tasks</p>
+  </header>
+
+  <main>
+
+    <section class="intro">
+      <h2>Free Online Tools for Everyone</h2>
+      <p>
+        Use our simple online tools to work with text, count words,
+        check characters and handle everyday writing tasks quickly.
+      </p>
+    </section>
+
+    <section class="tools">
+
+      <div class="tool-card">
+        <h2>Word Counter</h2>
+        <textarea id="wordText" placeholder="Type or paste your text here..."></textarea>
+        <button onclick="countWords()">Count Words</button>
+        <div class="result" id="wordResult">Result will appear here.</div>
+      </div>
+
+      <div class="tool-card">
+        <h2>Character Counter</h2>
+        <textarea id="characterText" placeholder="Type or paste your text here..."></textarea>
+        <button onclick="countCharacters()">Count Characters</button>
+        <div class="result" id="characterResult">Result will appear here.</div>
+      </div>
+
+      <div class="tool-card">
+        <h2>Text Case Converter</h2>
+        <textarea id="caseText" placeholder="Enter your text here..."></textarea>
+        <button onclick="upperCase()">UPPERCASE</button>
+        <button onclick="lowerCase()">lowercase</button>
+        <div class="result" id="caseResult">Converted text will appear here.</
