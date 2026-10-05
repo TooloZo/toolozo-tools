@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta name="description" content="Free online tools for text, SEO and everyday tasks.">
-  <title>Free Online Tools - Text, SEO & Everyday Tasks</title>
+
+  <title>TooloZo Tools - Free Online Tools</title>
 
   <style>
     * {
@@ -32,7 +34,6 @@
 
     header p {
       margin: 0;
-      font-size: 16px;
       color: #d1d5db;
     }
 
@@ -42,11 +43,12 @@
       padding: 0 15px;
     }
 
-    .intro {
+    .intro,
+    .tool-card {
       background: white;
-      padding: 25px;
+      padding: 22px;
       border-radius: 12px;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.06);
     }
 
@@ -56,35 +58,24 @@
       gap: 20px;
     }
 
-    .tool-card {
-      background: white;
-      padding: 22px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-    }
-
     .tool-card h2 {
       margin-top: 0;
-      font-size: 21px;
     }
 
-    textarea,
-    input {
+    textarea {
       width: 100%;
+      min-height: 120px;
       padding: 12px;
       margin-top: 10px;
       border: 1px solid #d1d5db;
       border-radius: 8px;
       font-size: 15px;
-    }
-
-    textarea {
-      min-height: 120px;
       resize: vertical;
     }
 
     button {
       margin-top: 12px;
+      margin-right: 5px;
       padding: 11px 18px;
       border: none;
       border-radius: 8px;
@@ -92,10 +83,6 @@
       color: white;
       font-size: 15px;
       cursor: pointer;
-    }
-
-    button:hover {
-      opacity: 0.9;
     }
 
     .result {
@@ -120,17 +107,17 @@
 <body>
 
   <header>
-    <h1>Free Online Tools</h1>
-    <p>Simple tools for text, SEO and everyday tasks</p>
+    <h1>TooloZo Tools</h1>
+    <p>Free Online Tools for Text, SEO and Everyday Tasks</p>
   </header>
 
   <main>
 
     <section class="intro">
-      <h2>Free Online Tools for Everyone</h2>
+      <h2>Free Online Tools</h2>
       <p>
-        Use our simple online tools to work with text, count words,
-        check characters and handle everyday writing tasks quickly.
+        Use our simple and free online tools for writing,
+        text editing and everyday tasks.
       </p>
     </section>
 
@@ -138,21 +125,128 @@
 
       <div class="tool-card">
         <h2>Word Counter</h2>
-        <textarea id="wordText" placeholder="Type or paste your text here..."></textarea>
-        <button onclick="countWords()">Count Words</button>
-        <div class="result" id="wordResult">Result will appear here.</div>
+
+        <textarea id="wordText"
+          placeholder="Type or paste your text here..."></textarea>
+
+        <button type="button" onclick="countWords()">
+          Count Words
+        </button>
+
+        <div class="result" id="wordResult">
+          Words: 0
+        </div>
       </div>
+
 
       <div class="tool-card">
         <h2>Character Counter</h2>
-        <textarea id="characterText" placeholder="Type or paste your text here..."></textarea>
-        <button onclick="countCharacters()">Count Characters</button>
-        <div class="result" id="characterResult">Result will appear here.</div>
+
+        <textarea id="characterText"
+          placeholder="Type or paste your text here..."></textarea>
+
+        <button type="button" onclick="countCharacters()">
+          Count Characters
+        </button>
+
+        <div class="result" id="characterResult">
+          Characters: 0
+        </div>
       </div>
+
 
       <div class="tool-card">
         <h2>Text Case Converter</h2>
-        <textarea id="caseText" placeholder="Enter your text here..."></textarea>
-        <button onclick="upperCase()">UPPERCASE</button>
-        <button onclick="lowerCase()">lowercase</button>
-        <div class="result" id="caseResult">Converted text will appear here.</
+
+        <textarea id="caseText"
+          placeholder="Enter your text here..."></textarea>
+
+        <button type="button" onclick="upperCase()">
+          UPPERCASE
+        </button>
+
+        <button type="button" onclick="lowerCase()">
+          lowercase
+        </button>
+
+        <div class="result" id="caseResult">
+          Converted text will appear here.
+        </div>
+      </div>
+
+
+      <div class="tool-card">
+        <h2>Remove Extra Spaces</h2>
+
+        <textarea id="spaceText"
+          placeholder="Paste text with extra spaces..."></textarea>
+
+        <button type="button" onclick="removeSpaces()">
+          Clean Text
+        </button>
+
+        <div class="result" id="spaceResult">
+          Cleaned text will appear here.
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 TooloZo Tools. All rights reserved.</p>
+  </footer>
+
+
+  <script>
+    function countWords() {
+      var text = document.getElementById("wordText").value.trim();
+
+      if (text === "") {
+        document.getElementById("wordResult").textContent = "Words: 0";
+        return;
+      }
+
+      var words = text.split(/\s+/);
+      document.getElementById("wordResult").textContent =
+        "Words: " + words.length;
+    }
+
+
+    function countCharacters() {
+      var text = document.getElementById("characterText").value;
+
+      document.getElementById("characterResult").textContent =
+        "Characters: " + text.length;
+    }
+
+
+    function upperCase() {
+      var text = document.getElementById("caseText").value;
+
+      document.getElementById("caseResult").textContent =
+        text.toUpperCase();
+    }
+
+
+    function lowerCase() {
+      var text = document.getElementById("caseText").value;
+
+      document.getElementById("caseResult").textContent =
+        text.toLowerCase();
+    }
+
+
+    function removeSpaces() {
+      var text = document.getElementById("spaceText").value;
+
+      var cleaned = text.replace(/\s+/g, " ").trim();
+
+      document.getElementById("spaceResult").textContent =
+        cleaned;
+    }
+  </script>
+
+</body>
+</html>
